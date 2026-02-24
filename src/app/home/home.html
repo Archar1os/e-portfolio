@@ -1,0 +1,498 @@
+<!-- ===============================================
+     ARCHARIOS - PREMIUM PORTFOLIO HOMEPAGE
+     Minimalist | Architectural | Digital Craft
+     =============================================== -->
+
+<!-- Hero Section - Cinematic Experience -->
+<section class="relative h-screen w-full overflow-hidden bg-[#0A0A0A]">
+  <!-- Dynamic Grid Overlay -->
+  <div
+    class="absolute inset-0"
+    style="
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 50px 50px;
+    "
+  ></div>
+
+  <!-- Animated Gradient Orbs -->
+  <div
+    class="absolute top-20 left-1/4 w-96 h-96 bg-[#E54D2E]/5 rounded-full blur-[120px] animate-pulse-slow"
+  ></div>
+  <div
+    class="absolute bottom-20 right-1/4 w-80 h-80 bg-[#E54D2E]/10 rounded-full blur-[100px] animate-pulse-slower"
+  ></div>
+
+  <!-- Main Content Container -->
+  <div class="relative z-10 h-full max-w-7xl mx-auto px-6 lg:px-12 flex items-center">
+    <div class="grid lg:grid-cols-2 gap-16 items-center w-full">
+      <!-- Left Column - Text Content -->
+      <div class="space-y-8">
+        <!-- Pre-heading with line -->
+        <div class="flex items-center gap-4 group">
+          <div class="w-12 h-[2px] bg-[#E54D2E] group-hover:w-20 transition-all duration-700"></div>
+          <span class="text-[#E54D2E] text-sm tracking-[0.3em] uppercase font-light"
+            >Archarios · MMXXV</span
+          >
+        </div>
+
+        <!-- Main Heading -->
+        <h1 class="space-y-2">
+          <span
+            class="block text-6xl lg:text-7xl xl:text-8xl font-light text-white tracking-[-0.03em]"
+          >
+            Smith
+          </span>
+          <span
+            class="block text-6xl lg:text-7xl xl:text-8xl font-light text-white/90 tracking-[-0.03em]"
+          >
+            Dainielle
+          </span>
+          <span
+            class="block text-7xl lg:text-8xl xl:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E54D2E] to-[#FF6B4A] tracking-[-0.04em] leading-[1.1]"
+          >
+            ROMERO
+          </span>
+        </h1>
+
+        <!-- Dynamic Role Carousel -->
+        <div class="h-16 overflow-hidden">
+          <div class="animate-role-carousel space-y-4">
+            <div class="text-2xl lg:text-3xl text-white/40 font-light">Web Architect</div>
+            <div class="text-2xl lg:text-3xl text-white/40 font-light">UI/UX Designer</div>
+            <div class="text-2xl lg:text-3xl text-white/40 font-light">Digital Craftsman</div>
+            <div class="text-2xl lg:text-3xl text-white/40 font-light">Creative Developer</div>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <p class="text-white/50 text-lg leading-relaxed max-w-md font-light">
+          Crafting digital experiences where architecture meets code. I build minimal, performant,
+          and meaningful web solutions for forward-thinking brands.
+        </p>
+
+        <!-- CTA Group -->
+        <div class="flex items-center gap-6 pt-4">
+          <a
+            (click)="navigateTo('work')"
+            class="group relative px-8 py-4 bg-[#E54D2E] text-white font-medium rounded-none overflow-hidden cursor-none"
+          >
+            <span class="relative z-10">View Selected Work</span>
+            <div
+              class="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
+            ></div>
+            <div
+              class="absolute inset-0 opacity-20 group-hover:opacity-0 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full"
+            ></div>
+          </a>
+
+          <a
+            (click)="navigateTo('contact')"
+            class="text-white/70 hover:text-white transition-colors duration-300 flex items-center gap-2 group cursor-none"
+          >
+            <span>Let's Connect</span>
+            <svg
+              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path
+                d="M5 12H19M19 12L13 6M19 12L13 18"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Availability Badge -->
+        <div class="flex items-center gap-3 pt-6">
+          <span class="relative flex h-3 w-3">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+            ></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+          </span>
+          <span class="text-white/40 text-sm tracking-wide"
+            >Available for select collaborations</span
+          >
+        </div>
+      </div>
+
+      <!-- Right Column - Visual Element -->
+      <div class="relative hidden lg:block">
+        <!-- 3D-like Card Stack -->
+        <div class="relative h-[600px] w-full">
+          <!-- Main Card -->
+          <div
+            class="absolute top-0 right-0 w-[450px] h-[550px] bg-gradient-to-br from-[#1A1A1A] to-[#0D0D0D] border border-white/5 shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-700 group"
+          >
+            <!-- Inner Grid -->
+            <div
+              class="absolute inset-0 opacity-10"
+              style="
+                background-image:
+                  linear-gradient(rgba(229, 77, 46, 0.1) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(229, 77, 46, 0.1) 1px, transparent 1px);
+                background-size: 20px 20px;
+              "
+            ></div>
+
+            <!-- Content -->
+            <div class="absolute bottom-0 left-0 right-0 p-8">
+              <div class="space-y-4">
+                <div class="flex items-center gap-2">
+                  <div class="w-1 h-8 bg-[#E54D2E]"></div>
+                  <span class="text-white/30 text-xs tracking-[0.3em] uppercase"
+                    >Current Focus</span
+                  >
+                </div>
+                <h3 class="text-2xl text-white font-light">Building the<br />future of web</h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-white/5 text-white/60 text-xs">React</span>
+                  <span class="px-3 py-1 bg-white/5 text-white/60 text-xs">Angular</span>
+                  <span class="px-3 py-1 bg-white/5 text-white/60 text-xs">Node.js</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Elements -->
+          <div
+            class="absolute -bottom-10 left-10 w-32 h-32 bg-[#E54D2E]/10 rounded-full blur-xl animate-float"
+          ></div>
+          <div
+            class="absolute top-20 left-0 w-24 h-24 border border-white/5 rounded-full animate-spin-slow"
+          ></div>
+
+          <!-- Stats Card -->
+          <div
+            class="absolute -left-20 bottom-40 bg-black/80 backdrop-blur-xl border border-white/10 p-6 transform -rotate-6 hover:rotate-0 transition-all duration-500"
+          >
+            <div class="text-3xl text-white font-light">3<span class="text-[#E54D2E]">+</span></div>
+            <div class="text-white/40 text-xs tracking-wider mt-1">Years of Craft</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+    <span class="text-white/20 text-xs tracking-widest">SCROLL</span>
+    <div
+      class="w-[2px] h-12 bg-gradient-to-b from-transparent via-[#E54D2E]/50 to-transparent"
+    ></div>
+  </div>
+</section>
+
+<!-- ===============================================
+     PHILOSOPHY SECTION - Minimal Statement
+     =============================================== -->
+<section class="bg-[#0A0A0A] py-32 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid lg:grid-cols-2 gap-20">
+      <!-- Left Side - Numbered Statement -->
+      <div>
+        <span class="text-7xl font-thin text-white/10">01</span>
+        <h2 class="text-4xl lg:text-5xl text-white font-light mt-4 leading-tight">
+          Digital<br />Architecture
+        </h2>
+      </div>
+
+      <!-- Right Side - Manifesto -->
+      <div class="space-y-8">
+        <p class="text-white/30 text-sm tracking-widest uppercase">Manifesto</p>
+        <p class="text-white/70 text-2xl font-light leading-relaxed">
+          I believe in the power of minimalism. Every line of code, every pixel should serve a
+          purpose. My work is a conversation between aesthetics and functionality.
+        </p>
+        <div class="flex gap-4">
+          <div class="w-12 h-[2px] bg-[#E54D2E] mt-3"></div>
+          <p class="text-white/40 text-lg font-light">Based in Pampanga, PH · Working worldwide</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===============================================
+     DISCIPLINES - What I Master
+     =============================================== -->
+<section class="bg-[#0A0A0A] py-32 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <!-- Section Header -->
+    <div class="text-center mb-20">
+      <span class="text-[#E54D2E] text-sm tracking-[0.3em] uppercase">Disciplines</span>
+      <h2 class="text-4xl lg:text-5xl text-white font-light mt-4">Areas of Mastery</h2>
+      <div class="w-20 h-[2px] bg-[#E54D2E]/30 mx-auto mt-8"></div>
+    </div>
+
+    <!-- Disciplines Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5">
+      <!-- Discipline 1 -->
+      <div class="bg-[#0A0A0A] p-10 group hover:bg-[#0F0F0F] transition-all duration-500">
+        <span
+          class="text-5xl text-white/10 group-hover:text-[#E54D2E]/20 transition-colors duration-500"
+          >01</span
+        >
+        <h3 class="text-xl text-white mt-6 mb-3">Web Development</h3>
+        <p class="text-white/40 text-sm leading-relaxed font-light">
+          React, Angular, Node.js, and modern frameworks for scalable applications.
+        </p>
+        <div
+          class="w-8 h-[2px] bg-[#E54D2E]/50 mt-6 group-hover:w-16 transition-all duration-300"
+        ></div>
+      </div>
+
+      <!-- Discipline 2 -->
+      <div class="bg-[#0A0A0A] p-10 group hover:bg-[#0F0F0F] transition-all duration-500">
+        <span
+          class="text-5xl text-white/10 group-hover:text-[#E54D2E]/20 transition-colors duration-500"
+          >02</span
+        >
+        <h3 class="text-xl text-white mt-6 mb-3">UI/UX Design</h3>
+        <p class="text-white/40 text-sm leading-relaxed font-light">
+          Human-centered design, wireframing, prototyping, and user research.
+        </p>
+        <div
+          class="w-8 h-[2px] bg-[#E54D2E]/50 mt-6 group-hover:w-16 transition-all duration-300"
+        ></div>
+      </div>
+
+      <!-- Discipline 3 -->
+      <div class="bg-[#0A0A0A] p-10 group hover:bg-[#0F0F0F] transition-all duration-500">
+        <span
+          class="text-5xl text-white/10 group-hover:text-[#E54D2E]/20 transition-colors duration-500"
+          >03</span
+        >
+        <h3 class="text-xl text-white mt-6 mb-3">Full Stack</h3>
+        <p class="text-white/40 text-sm leading-relaxed font-light">
+          End-to-end development with MongoDB, Express, and cloud services.
+        </p>
+        <div
+          class="w-8 h-[2px] bg-[#E54D2E]/50 mt-6 group-hover:w-16 transition-all duration-300"
+        ></div>
+      </div>
+
+      <!-- Discipline 4 -->
+      <div class="bg-[#0A0A0A] p-10 group hover:bg-[#0F0F0F] transition-all duration-500">
+        <span
+          class="text-5xl text-white/10 group-hover:text-[#E54D2E]/20 transition-colors duration-500"
+          >04</span
+        >
+        <h3 class="text-xl text-white mt-6 mb-3">Creative Direction</h3>
+        <p class="text-white/40 text-sm leading-relaxed font-light">
+          Visual storytelling, brand identity, and digital experiences.
+        </p>
+        <div
+          class="w-8 h-[2px] bg-[#E54D2E]/50 mt-6 group-hover:w-16 transition-all duration-300"
+        ></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===============================================
+     FEATURED WORK - Minimal Gallery
+     =============================================== -->
+<section class="bg-[#0A0A0A] py-32 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <!-- Header -->
+    <div class="flex justify-between items-end mb-16">
+      <div>
+        <span class="text-[#E54D2E] text-sm tracking-[0.3em] uppercase">Portfolio</span>
+        <h2 class="text-4xl lg:text-5xl text-white font-light mt-4">Selected Projects</h2>
+      </div>
+      <a
+        (click)="navigateTo('work')"
+        class="text-white/40 hover:text-white transition-colors duration-300 flex items-center gap-2 cursor-none"
+      >
+        <span>View All</span>
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M17 8L21 12M21 12L17 16M21 12H3" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="space-y-6">
+      <!-- Project 1 -->
+      <div class="group relative h-[400px] overflow-hidden cursor-none">
+        <div class="absolute inset-0 bg-[#151515]">
+          <div
+            class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 bg-gradient-to-r from-[#E54D2E] to-transparent"
+          ></div>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-between p-12">
+          <div>
+            <span class="text-white/30 text-sm tracking-[0.2em] uppercase">2024 · E-commerce</span>
+            <h3
+              class="text-4xl text-white font-light mt-3 group-hover:translate-x-2 transition-transform duration-500"
+            >
+              Modern Retail
+            </h3>
+          </div>
+          <div
+            class="text-white/20 text-8xl font-thin opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+          >
+            →
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="group relative h-[400px] overflow-hidden cursor-none">
+        <div class="absolute inset-0 bg-[#151515]">
+          <div
+            class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 bg-gradient-to-r from-[#E54D2E] to-transparent"
+          ></div>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-between p-12">
+          <div>
+            <span class="text-white/30 text-sm tracking-[0.2em] uppercase">2024 · Dashboard</span>
+            <h3
+              class="text-4xl text-white font-light mt-3 group-hover:translate-x-2 transition-transform duration-500"
+            >
+              Analytics Platform
+            </h3>
+          </div>
+          <div
+            class="text-white/20 text-8xl font-thin opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+          >
+            →
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="group relative h-[400px] overflow-hidden cursor-none">
+        <div class="absolute inset-0 bg-[#151515]">
+          <div
+            class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 bg-gradient-to-r from-[#E54D2E] to-transparent"
+          ></div>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-between p-12">
+          <div>
+            <span class="text-white/30 text-sm tracking-[0.2em] uppercase">2023 · Mobile</span>
+            <h3
+              class="text-4xl text-white font-light mt-3 group-hover:translate-x-2 transition-transform duration-500"
+            >
+              Fitness App
+            </h3>
+          </div>
+          <div
+            class="text-white/20 text-8xl font-thin opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+          >
+            →
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===============================================
+     RECOGNITION - Stats & Awards
+     =============================================== -->
+<section class="bg-[#0A0A0A] py-32 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/5">
+      <!-- Stat 1 -->
+      <div
+        class="bg-[#0A0A0A] p-12 text-center group hover:bg-[#0F0F0F] transition-all duration-500"
+      >
+        <div
+          class="text-5xl text-white font-light group-hover:text-[#E54D2E] transition-colors duration-500"
+        >
+          30+
+        </div>
+        <div class="text-white/30 text-sm mt-2">Projects Delivered</div>
+      </div>
+
+      <!-- Stat 2 -->
+      <div
+        class="bg-[#0A0A0A] p-12 text-center group hover:bg-[#0F0F0F] transition-all duration-500"
+      >
+        <div
+          class="text-5xl text-white font-light group-hover:text-[#E54D2E] transition-colors duration-500"
+        >
+          100%
+        </div>
+        <div class="text-white/30 text-sm mt-2">Client Satisfaction</div>
+      </div>
+
+      <!-- Stat 3 -->
+      <div
+        class="bg-[#0A0A0A] p-12 text-center group hover:bg-[#0F0F0F] transition-all duration-500"
+      >
+        <div
+          class="text-5xl text-white font-light group-hover:text-[#E54D2E] transition-colors duration-500"
+        >
+          8
+        </div>
+        <div class="text-white/30 text-sm mt-2">Certifications</div>
+      </div>
+
+      <!-- Stat 4 -->
+      <div
+        class="bg-[#0A0A0A] p-12 text-center group hover:bg-[#0F0F0F] transition-all duration-500"
+      >
+        <div
+          class="text-5xl text-white font-light group-hover:text-[#E54D2E] transition-colors duration-500"
+        >
+          3+
+        </div>
+        <div class="text-white/30 text-sm mt-2">Years Experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===============================================
+     CLIENTS & COLLABORATORS
+     =============================================== -->
+<section class="bg-[#0A0A0A] py-20 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <p class="text-white/30 text-sm tracking-[0.3em] uppercase text-center mb-12">Trusted by</p>
+    <div class="flex flex-wrap justify-center gap-16 opacity-50">
+      <span class="text-white/40 text-2xl font-light">TechCorp</span>
+      <span class="text-white/40 text-2xl font-light">StartupPH</span>
+      <span class="text-white/40 text-2xl font-light">DesignHub</span>
+      <span class="text-white/40 text-2xl font-light">WebFlow</span>
+      <span class="text-white/40 text-2xl font-light">CreativeLab</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===============================================
+     CONTACT BANNER
+     =============================================== -->
+<section class="bg-[#0A0A0A] py-32 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+    <span class="text-[#E54D2E] text-sm tracking-[0.3em] uppercase">Collaborate</span>
+    <h2 class="text-5xl lg:text-7xl text-white font-light mt-6 leading-tight">
+      Let's create something<br />exceptional together
+    </h2>
+    <div class="mt-12">
+      <a
+        (click)="navigateTo('contact')"
+        class="inline-flex items-center gap-3 px-10 py-5 bg-[#E54D2E] text-white font-medium text-lg group cursor-none"
+      >
+        <span>Start a conversation</span>
+        <svg
+          class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+        >
+          <path d="M17 8L21 12M21 12L17 16M21 12H3" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+      </a>
+    </div>
+    <p class="text-white/30 text-sm mt-8">Available for freelance and full-time opportunities</p>
+  </div>
+</section>

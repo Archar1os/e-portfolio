@@ -1,0 +1,322 @@
+<div class="py-20 px-4 md:px-8 max-w-6xl mx-auto bg-black min-h-screen">
+  <div class="text-center mb-8">
+    <div class="flex flex-col items-center py-5">
+      <div
+        class="inline-flex items-center gap-2 font-mono text-xs tracking-widest text-[#E8302A] uppercase mb-3"
+      >
+        <span>//</span> Say Hello
+      </div>
+      <h2
+        class="font-['Clash_Display'] text-3xl md:text-5xl font-bold text-white relative inline-block"
+      >
+        <span
+          class="relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:bg-[#E8302A]"
+          >Get In Touch</span
+        >
+      </h2>
+    </div>
+    <p class="text-sm text-gray-400 max-w-2xl mx-auto mt-4 leading-relaxed font-light">
+      I'm currently open to new opportunities, collaborations, and interesting projects. Whether you
+      have a question, want to discuss a potential project, or just want to say hello, feel free to
+      reach out!
+    </p>
+    <div class="inline-flex items-center gap-2 text-xs text-gray-500 mt-3">
+      typically responds within 24 hours
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <!-- Contact Form -->
+    <div class="bg-[#1E1E27] border border-white/10 rounded-xl p-6 md:p-8">
+      <h3 class="font-['Clash_Display'] font-bold text-white mb-6 flex items-center gap-2">
+        <span class="text-lg">✉️</span> Send a Message
+      </h3>
+
+      <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+        <div class="mb-4">
+          <label class="block text-xs font-semibold tracking-wider text-gray-400 uppercase mb-2">
+            Your Name <span class="text-[#E8302A]">*</span>
+          </label>
+          <input
+            type="text"
+            name="name"
+            [(ngModel)]="formData.name"
+            required
+            class="w-full bg-[#111116] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:border-[#E8302A] focus:ring-2 focus:ring-[#E8302A]/20 outline-none transition-all"
+            placeholder="John Smith"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-xs font-semibold tracking-wider text-gray-400 uppercase mb-2">
+            Email Address <span class="text-[#E8302A]">*</span>
+          </label>
+          <input
+            type="email"
+            name="email"
+            [(ngModel)]="formData.email"
+            required
+            class="w-full bg-[#111116] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:border-[#E8302A] focus:ring-2 focus:ring-[#E8302A]/20 outline-none transition-all"
+            placeholder="john@example.com"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-xs font-semibold tracking-wider text-gray-400 uppercase mb-2">
+            Phone Number <span class="text-gray-500">(Optional)</span>
+          </label>
+          <input
+            type="tel"
+            name="phone"
+            [(ngModel)]="formData.phone"
+            class="w-full bg-[#111116] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:border-[#E8302A] focus:ring-2 focus:ring-[#E8302A]/20 outline-none transition-all"
+            placeholder="+63 912 345 6789"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-xs font-semibold tracking-wider text-gray-400 uppercase mb-2">
+            Subject <span class="text-[#E8302A]">*</span>
+          </label>
+          <select
+            name="subject"
+            [(ngModel)]="formData.subject"
+            required
+            class="w-full bg-[#111116] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:border-[#E8302A] focus:ring-2 focus:ring-[#E8302A]/20 outline-none transition-all appearance-none"
+            style="
+              background-image: url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23999999' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>&quot;);
+              background-repeat: no-repeat;
+              background-position: right 1rem center;
+            "
+          >
+            <option value="" disabled selected>Select a subject</option>
+            <option value="project">Project Inquiry</option>
+            <option value="job">Job Opportunity</option>
+            <option value="collaboration">Collaboration</option>
+            <option value="freelance">Freelance Work</option>
+            <option value="general">General Question</option>
+          </select>
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-xs font-semibold tracking-wider text-gray-400 uppercase mb-2">
+            Message <span class="text-[#E8302A]">*</span>
+          </label>
+          <textarea
+            name="message"
+            [(ngModel)]="formData.message"
+            required
+            rows="4"
+            class="w-full bg-[#111116] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:border-[#E8302A] focus:ring-2 focus:ring-[#E8302A]/20 outline-none transition-all resize-y"
+            placeholder="Hi Smith, I'd like to discuss..."
+          ></textarea>
+        </div>
+
+        <div class="mb-6">
+          <label class="flex items-start gap-2 text-xs text-gray-400 cursor-pointer">
+            <input
+              type="checkbox"
+              name="agree"
+              [(ngModel)]="formData.agree"
+              required
+              class="mt-1 accent-[#E8302A]"
+            />
+            <span
+              >I agree to the
+              <a href="#" class="text-[#E8302A] hover:underline">privacy policy</a> and consent to
+              being contacted</span
+            >
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          [disabled]="!contactForm.valid"
+          class="w-full bg-[#E8302A] text-white font-semibold text-sm px-6 py-3 rounded-lg hover:bg-[#FF4D47] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(232,48,42,0.25)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+        >
+          ✈ Send Message
+        </button>
+      </form>
+
+      <!-- Success Message (hidden by default) -->
+      <div *ngIf="formSubmitted" class="text-center py-8">
+        <div class="text-4xl mb-3">✅</div>
+        <h3 class="font-['Clash_Display'] text-xl text-[#E8302A] mb-2">Message Sent!</h3>
+        <p class="text-sm text-gray-400">
+          Thank you for reaching out. I'll get back to you within 24 hours.
+        </p>
+      </div>
+    </div>
+
+    <!-- Contact Info Panel -->
+    <div class="space-y-6">
+      <!-- Contact Information -->
+      <div class="bg-[#1E1E27] border border-white/10 rounded-xl p-6">
+        <h3 class="font-['Clash_Display'] font-bold text-white mb-4 flex items-center gap-2">
+          <span class="text-lg">📬</span> Contact Information
+        </h3>
+
+        <div class="flex items-start gap-3 mb-4">
+          <div
+            class="w-8 h-8 rounded-lg bg-[#E8302A]/10 border border-[#E8302A]/20 flex items-center justify-center text-sm flex-shrink-0"
+          >
+            ✉️
+          </div>
+          <div>
+            <div class="text-xs font-semibold tracking-wider text-gray-500 uppercase mb-1">
+              Email
+            </div>
+            <div class="text-sm text-white">
+              <a href="mailto:smith.dain.romero@gmail.com" class="hover:text-[#E8302A]"
+                >smith.dain.romero@gmail.com</a
+              >
+            </div>
+            <div class="text-xs text-gray-500 mt-1">For general inquiries</div>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3 mb-4">
+          <div
+            class="w-8 h-8 rounded-lg bg-[#E8302A]/10 border border-[#E8302A]/20 flex items-center justify-center text-sm flex-shrink-0"
+          >
+            📞
+          </div>
+          <div>
+            <div class="text-xs font-semibold tracking-wider text-gray-500 uppercase mb-1">
+              Phone
+            </div>
+            <div class="text-sm text-white">+63 960 562 0450</div>
+            <div class="text-xs text-gray-500 mt-1">Available Mon-Fri, 9AM-6PM</div>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div
+            class="w-8 h-8 rounded-lg bg-[#E8302A]/10 border border-[#E8302A]/20 flex items-center justify-center text-sm flex-shrink-0"
+          >
+            📍
+          </div>
+          <div>
+            <div class="text-xs font-semibold tracking-wider text-gray-500 uppercase mb-1">
+              Location
+            </div>
+            <div class="text-sm text-white">Pampanga, Philippines</div>
+            <div class="text-xs text-gray-500 mt-1">Open to remote work worldwide</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Hours -->
+      <div class="bg-[#1E1E27] border border-white/10 rounded-xl p-6">
+        <h3 class="font-['Clash_Display'] font-bold text-white mb-4 flex items-center gap-2">
+          <span class="text-lg">🕐</span> Business Hours
+        </h3>
+
+        <div class="space-y-2">
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-300">Monday – Friday</span>
+            <span class="text-gray-400">9:00 AM – 6:00 PM</span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-300">Saturday</span>
+            <span class="text-gray-400">10:00 AM – 2:00 PM</span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-300">Sunday</span>
+            <span class="text-[#E8302A]">Closed</span>
+          </div>
+          <div class="text-xs text-gray-500 mt-2">Philippine Standard Time UTC+8</div>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="bg-[#1E1E27] border border-white/10 rounded-xl p-6">
+        <h3 class="font-['Clash_Display'] font-bold text-white mb-4 flex items-center gap-2">
+          <span class="text-lg">🔗</span> Connect With Me
+        </h3>
+
+        <p class="text-xs text-gray-400 mb-4">
+          Follow me on social media for updates, tutorials, and web development tips.
+        </p>
+
+        <div class="flex flex-wrap gap-2">
+          <a
+            href="https://linkedin.com/in/smith-dainielle-romero-03242a328/"
+            target="_blank"
+            class="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded border border-white/10 text-gray-400 hover:border-[#E8302A] hover:text-[#E8302A] hover:bg-[#E8302A]/10 transition-all"
+            >💼 LinkedIn</a
+          >
+          <a
+            href="https://github.com/archar1os"
+            target="_blank"
+            class="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded border border-white/10 text-gray-400 hover:border-[#E8302A] hover:text-[#E8302A] hover:bg-[#E8302A]/10 transition-all"
+            >🐙 GitHub</a
+          >
+          <a
+            href="#"
+            class="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded border border-white/10 text-gray-400 hover:border-[#E8302A] hover:text-[#E8302A] hover:bg-[#E8302A]/10 transition-all"
+            >🐦 Twitter</a
+          >
+          <a
+            href="#"
+            class="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded border border-white/10 text-gray-400 hover:border-[#E8302A] hover:text-[#E8302A] hover:bg-[#E8302A]/10 transition-all"
+            >📸 Instagram</a
+          >
+          <a
+            href="#"
+            class="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded border border-white/10 text-gray-400 hover:border-[#E8302A] hover:text-[#E8302A] hover:bg-[#E8302A]/10 transition-all"
+            >✏️ CodePen</a
+          >
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="bg-[#1E1E27] border border-white/10 rounded-xl p-6">
+        <h3 class="font-['Clash_Display'] font-bold text-white mb-4 flex items-center gap-2">
+          <span class="text-lg">⚡</span> Quick Links
+        </h3>
+
+        <div class="space-y-2">
+          <a
+            routerLink="/resume"
+            class="flex items-center gap-2 text-sm text-[#E8302A] hover:gap-3 transition-all"
+            >📄 View My Resume</a
+          >
+          <a
+            routerLink="/projects"
+            class="flex items-center gap-2 text-sm text-[#E8302A] hover:gap-3 transition-all"
+            >🚀 See My Projects</a
+          >
+          <a
+            href="#"
+            class="flex items-center gap-2 text-sm text-[#E8302A] hover:gap-3 transition-all"
+            >💰 Services & Rates</a
+          >
+          <a
+            href="#"
+            class="flex items-center gap-2 text-sm text-[#E8302A] hover:gap-3 transition-all"
+            >❓ Frequently Asked Questions</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Location Card -->
+  <div class="mt-8 max-w-md mx-auto text-center">
+    <div class="bg-[#1E1E27] border border-white/10 rounded-xl p-6">
+      <div class="text-3xl mb-3">📍</div>
+      <h3 class="font-['Clash_Display'] text-lg font-bold text-white mb-1">
+        Pampanga, Philippines
+      </h3>
+      <p class="text-sm text-gray-400 mb-4">Available for remote work worldwide</p>
+      <a
+        href="https://maps.google.com/?q=Pampanga,Philippines"
+        target="_blank"
+        class="inline-flex items-center gap-2 bg-transparent text-white text-sm px-5 py-2 rounded-lg border border-white/10 hover:border-[#E8302A] hover:text-[#E8302A] transition-all"
+      >
+        🗺 Get Directions
+      </a>
+    </div>
+  </div>
+</div>
