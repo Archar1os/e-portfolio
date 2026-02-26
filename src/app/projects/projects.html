@@ -1,1 +1,527 @@
-<p>projects works!</p>
+<!-- ===============================================
+     ARCHARIOS - PROJECTS PAGE
+     Minimalist | Filterable Gallery | Case Studies
+     =============================================== -->
+
+<!-- Floating Background Elements -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+  <div
+    class="absolute w-[500px] h-[500px] top-[5%] -left-[200px] rounded-full bg-[#E54D2E]/5 blur-[100px] animate-pulse"
+  ></div>
+  <div
+    class="absolute w-[400px] h-[400px] bottom-[10%] -right-[150px] rounded-full bg-[#E54D2E]/3 blur-[100px] animate-pulse delay-1000"
+  ></div>
+  <div
+    class="absolute w-[300px] h-[300px] top-[40%] left-[20%] rounded-full bg-[#E54D2E]/4 blur-[80px] animate-pulse delay-2000"
+  ></div>
+</div>
+
+<main class="relative z-10 bg-[#0A0A0A] min-h-screen text-white pt-32 pb-20">
+  <!-- ===============================================
+       HEADER SECTION
+       =============================================== -->
+  <div class="container mx-auto px-6 lg:px-12 max-w-7xl mb-16">
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-3 text-white/30 text-sm mb-8 font-mono">
+      <a (click)="navigateTo('home')" class="hover:text-[#E54D2E] transition-colors cursor-pointer"
+        >Home</a
+      >
+      <span>/</span>
+      <span class="text-[#E54D2E]">Projects</span>
+    </div>
+
+    <!-- Header Content -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+      <div>
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-px bg-[#E54D2E]"></div>
+          <span class="text-[#E54D2E] text-sm tracking-[0.3em] uppercase font-light"
+            >Portfolio</span
+          >
+        </div>
+        <h1 class="text-5xl lg:text-7xl font-light text-white">
+          Selected
+          <span
+            class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E54D2E] to-[#FF8A5C]"
+            >Work</span
+          >
+        </h1>
+      </div>
+
+      <!-- Project Count -->
+      <div class="text-white/40 text-sm font-mono">
+        <span class="text-[#E54D2E] text-2xl font-bold">{{ filteredProjects.length }}</span> /
+        {{ projects.length }} projects
+      </div>
+    </div>
+  </div>
+
+  <!-- ===============================================
+       FILTER TABS
+       =============================================== -->
+  <div class="container mx-auto px-6 lg:px-12 max-w-7xl mb-12">
+    <div class="flex flex-wrap gap-3">
+      <button
+        *ngFor="let filter of filters"
+        (click)="setActiveFilter(filter)"
+        class="group relative px-6 py-3 text-sm transition-all duration-300 overflow-hidden"
+        [class.text-white]="activeFilter === filter"
+        [class.text-white/40]="activeFilter !== filter"
+      >
+        <!-- Background hover effect -->
+        <span
+          class="absolute inset-0 bg-white/5 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"
+          [class.!scale-x-100]="activeFilter === filter"
+        ></span>
+        <!-- Active indicator line -->
+        <span
+          class="absolute bottom-0 left-0 w-full h-px bg-[#E54D2E] scale-x-0 transition-transform duration-300"
+          [class.!scale-x-100]="activeFilter === filter"
+        ></span>
+        <!-- Text -->
+        <span class="relative z-10 uppercase tracking-wider text-sm">{{ filter }}</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===============================================
+       PROJECTS GRID - MASONRY STYLE
+       =============================================== -->
+  <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+      <!-- Project Card - Looping through filtered projects -->
+      <div
+        *ngFor="let project of filteredProjects; let i = index"
+        class="group relative bg-[#151515] border border-white/5 rounded-2xl overflow-hidden hover:border-[#E54D2E]/30 hover:-translate-y-2 transition-all duration-500 cursor-pointer"
+        [style.transitionDelay]="i * 50 + 'ms'"
+        (click)="openProjectModal(project)"
+      >
+        <!-- Project Image Area with gradient background -->
+        <div class="relative h-56 overflow-hidden">
+          <!-- Gradient Background (representing image) -->
+          <div
+            class="absolute inset-0 bg-gradient-to-br"
+            [class.from-[#1a0508]]="project.category === 'E-commerce'"
+            [class.to-[#3d0e15]]="project.category === 'E-commerce'"
+            [class.from-[#0a1520]]="project.category === 'Dashboard'"
+            [class.to-[#1a2d40]]="project.category === 'Dashboard'"
+            [class.from-[#1a1500]]="project.category === 'Mobile'"
+            [class.to-[#332b00]]="project.category === 'Mobile'"
+            [class.from-[#001a1a]]="project.category === 'API'"
+            [class.to-[#003333]]="project.category === 'API'"
+          ></div>
+
+          <!-- Overlay Pattern -->
+          <div
+            class="absolute inset-0 opacity-10"
+            style="
+              background-image: radial-gradient(
+                circle at 2px 2px,
+                rgba(255, 255, 255, 0.1) 1px,
+                transparent 0
+              );
+              background-size: 24px 24px;
+            "
+          ></div>
+
+          <!-- Project Icon/Emoji -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span
+              class="text-7xl transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500"
+              >{{ project.icon }}</span
+            >
+          </div>
+
+          <!-- Category Tag -->
+          <div class="absolute top-4 left-4">
+            <span
+              class="px-3 py-1 bg-black/50 backdrop-blur-sm border border-white/10 rounded-full text-white/80 text-xs"
+            >
+              {{ project.category }}
+            </span>
+          </div>
+
+          <!-- Year -->
+          <div class="absolute top-4 right-4">
+            <span class="text-white/40 text-sm font-mono">{{ project.year }}</span>
+          </div>
+
+          <!-- Gradient Overlay -->
+          <div
+            class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#151515] to-transparent"
+          ></div>
+        </div>
+
+        <!-- Project Info -->
+        <div class="p-6">
+          <h3
+            class="text-xl text-white font-medium mb-2 group-hover:text-[#E54D2E] transition-colors"
+          >
+            {{ project.title }}
+          </h3>
+          <p class="text-white/50 text-sm leading-relaxed mb-4 line-clamp-2">
+            {{ project.description }}
+          </p>
+
+          <!-- Tech Stack -->
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span
+              *ngFor="let tech of project.tech"
+              class="px-2 py-1 bg-[#0A0A0A] border border-white/5 rounded text-white/40 text-xs hover:border-[#E54D2E]/30 hover:text-[#E54D2E] transition-all"
+            >
+              {{ tech }}
+            </span>
+          </div>
+
+          <!-- Links -->
+          <div class="flex items-center gap-4 pt-2 border-t border-white/5">
+            <a
+              *ngIf="project.liveUrl"
+              [href]="project.liveUrl"
+              target="_blank"
+              class="text-sm text-white/40 hover:text-[#E54D2E] transition-colors flex items-center gap-1 group/link"
+              (click)="$event.stopPropagation()"
+            >
+              <span>Live Demo</span>
+              <span class="text-lg group-hover/link:translate-x-1 transition-transform">→</span>
+            </a>
+            <a
+              *ngIf="project.githubUrl"
+              [href]="project.githubUrl"
+              target="_blank"
+              class="text-sm text-white/40 hover:text-[#E54D2E] transition-colors flex items-center gap-1"
+              (click)="$event.stopPropagation()"
+            >
+              <span>GitHub</span>
+              <span class="text-lg">↗</span>
+            </a>
+            <span
+              *ngIf="!project.liveUrl && !project.githubUrl"
+              class="text-sm text-white/20 italic"
+              >Private project</span
+            >
+          </div>
+        </div>
+
+        <!-- Hover Corner Accent -->
+        <div
+          class="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-[#E54D2E] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-[#E54D2E] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div
+      *ngIf="filteredProjects.length === 0"
+      class="text-center py-32 border border-white/5 rounded-2xl bg-[#151515]/50"
+    >
+      <span class="text-6xl block mb-4 opacity-30">🔍</span>
+      <h3 class="text-2xl text-white/30 font-light mb-2">No projects found</h3>
+      <p class="text-white/20 text-sm">Try selecting a different category</p>
+      <button
+        (click)="setActiveFilter('All')"
+        class="mt-6 px-6 py-3 bg-[#E54D2E] text-white text-sm rounded-full hover:bg-[#FF6B4A] transition-colors"
+      >
+        View all projects
+      </button>
+    </div>
+
+    <!-- Load More Button (optional) -->
+    <div class="text-center mt-16" *ngIf="filteredProjects.length > 0">
+      <button
+        (click)="loadMore()"
+        class="group inline-flex items-center gap-3 px-8 py-4 border border-white/10 rounded-full text-white/60 hover:border-[#E54D2E]/30 hover:text-white transition-all"
+      >
+        <span>Load more projects</span>
+        <span class="text-xl group-hover:translate-y-1 transition-transform">↓</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===============================================
+       FEATURED PROJECT SHOWCASE (Optional Section)
+       =============================================== -->
+  <section class="mt-32 container mx-auto px-6 lg:px-12 max-w-7xl">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-12 h-px bg-[#E54D2E]"></div>
+      <span class="text-[#E54D2E] text-sm tracking-[0.3em] uppercase font-light"
+        >Featured Case Study</span
+      >
+    </div>
+
+    <!-- Featured Project - Highlight -->
+    <div
+      class="relative bg-gradient-to-br from-[#151515] to-[#0A0A0A] border border-white/5 rounded-3xl overflow-hidden group hover:border-[#E54D2E]/30 transition-all"
+    >
+      <div class="grid lg:grid-cols-2 gap-8 p-8 lg:p-12">
+        <!-- Left - Info -->
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+            <span
+              class="px-3 py-1 bg-[#E54D2E]/10 border border-[#E54D2E]/20 rounded-full text-[#E54D2E] text-xs"
+              >Featured</span
+            >
+            <span class="text-white/40 text-sm font-mono">2025</span>
+          </div>
+
+          <h2 class="text-3xl lg:text-4xl text-white font-light">
+            Modern
+            <span
+              class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E54D2E] to-[#FF8A5C]"
+              >E-Commerce</span
+            >
+            Platform
+          </h2>
+
+          <p class="text-white/60 leading-relaxed">
+            A full-featured e-commerce solution with real-time inventory, payment processing, and an
+            intuitive admin dashboard. Built for scalability and performance.
+          </p>
+
+          <!-- Features -->
+          <div class="space-y-3">
+            <div
+              *ngFor="
+                let feature of ['Real-time inventory', 'Payment integration', 'Analytics dashboard']
+              "
+              class="flex items-center gap-3 text-white/50 text-sm"
+            >
+              <span class="w-1 h-1 bg-[#E54D2E] rounded-full"></span>
+              {{ feature }}
+            </div>
+          </div>
+
+          <!-- Tech Stack -->
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1 bg-[#0A0A0A] border border-white/5 rounded-full text-white/40 text-xs"
+              >React</span
+            >
+            <span
+              class="px-3 py-1 bg-[#0A0A0A] border border-white/5 rounded-full text-white/40 text-xs"
+              >Node.js</span
+            >
+            <span
+              class="px-3 py-1 bg-[#0A0A0A] border border-white/5 rounded-full text-white/40 text-xs"
+              >MongoDB</span
+            >
+            <span
+              class="px-3 py-1 bg-[#0A0A0A] border border-white/5 rounded-full text-white/40 text-xs"
+              >Stripe</span
+            >
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex gap-4 pt-4">
+            <a
+              href="#"
+              class="px-6 py-3 bg-[#E54D2E] text-white text-sm rounded-full hover:bg-[#FF6B4A] transition-colors inline-flex items-center gap-2"
+            >
+              View Case Study
+              <span>→</span>
+            </a>
+            <a
+              href="#"
+              class="px-6 py-3 border border-white/10 text-white/60 text-sm rounded-full hover:border-[#E54D2E]/30 hover:text-white transition-colors"
+            >
+              Live Demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Right - Visual -->
+        <div
+          class="relative h-64 lg:h-auto bg-gradient-to-br from-[#1a0508] to-[#3d0e15] rounded-2xl overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 opacity-20"
+            style="
+              background-image: repeating-linear-gradient(
+                45deg,
+                rgba(229, 77, 46, 0.1) 0px,
+                rgba(229, 77, 46, 0.1) 2px,
+                transparent 2px,
+                transparent 8px
+              );
+            "
+          ></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span
+              class="text-9xl opacity-50 group-hover:scale-110 group-hover:opacity-70 transition-all duration-700"
+              >🛒</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===============================================
+       STATS SECTION
+       =============================================== -->
+  <section class="mt-32 container mx-auto px-6 lg:px-12 max-w-7xl">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden">
+      <div class="bg-[#151515] p-8 text-center group hover:bg-[#1A1A1A] transition-all">
+        <div class="text-3xl text-[#E54D2E] font-light group-hover:scale-110 transition-transform">
+          30+
+        </div>
+        <div class="text-white/40 text-sm mt-2">Projects</div>
+      </div>
+      <div class="bg-[#151515] p-8 text-center group hover:bg-[#1A1A1A] transition-all">
+        <div class="text-3xl text-[#E54D2E] font-light group-hover:scale-110 transition-transform">
+          15+
+        </div>
+        <div class="text-white/40 text-sm mt-2">Clients</div>
+      </div>
+      <div class="bg-[#151515] p-8 text-center group hover:bg-[#1A1A1A] transition-all">
+        <div class="text-3xl text-[#E54D2E] font-light group-hover:scale-110 transition-transform">
+          100%
+        </div>
+        <div class="text-white/40 text-sm mt-2">Satisfaction</div>
+      </div>
+      <div class="bg-[#151515] p-8 text-center group hover:bg-[#1A1A1A] transition-all">
+        <div class="text-3xl text-[#E54D2E] font-light group-hover:scale-110 transition-transform">
+          8
+        </div>
+        <div class="text-white/40 text-sm mt-2">Certifications</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===============================================
+       CTA SECTION
+       =============================================== -->
+  <section class="mt-32 container mx-auto px-6 lg:px-12 max-w-4xl text-center">
+    <h2 class="text-3xl lg:text-4xl text-white font-light mb-4">Have a project in mind?</h2>
+    <p class="text-white/50 mb-8">Let's collaborate and create something exceptional together.</p>
+    <a
+      (click)="navigateTo('contact')"
+      class="inline-flex items-center gap-3 px-10 py-5 bg-[#E54D2E] text-white font-medium rounded-full hover:bg-[#FF6B4A] hover:gap-5 transition-all cursor-pointer group"
+    >
+      <span>Start a conversation</span>
+      <span class="text-xl group-hover:translate-x-1 transition-transform">→</span>
+    </a>
+  </section>
+</main>
+
+<!-- ===============================================
+     PROJECT MODAL (Hidden by default)
+     =============================================== -->
+<div
+  *ngIf="selectedProject"
+  class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+  (click)="closeModal()"
+>
+  <div
+    class="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-[#151515] border border-white/10 rounded-2xl"
+    (click)="$event.stopPropagation()"
+  >
+    <!-- Close button -->
+    <button
+      (click)="closeModal()"
+      class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white/60 hover:text-white hover:border-[#E54D2E] transition-all z-10"
+    >
+      ✕
+    </button>
+
+    <!-- Modal Content -->
+    <div class="p-8 lg:p-12">
+      <!-- Project Header -->
+      <div class="flex items-start justify-between mb-8">
+        <div>
+          <div class="flex items-center gap-3 mb-3">
+            <span
+              class="px-3 py-1 bg-[#E54D2E]/10 border border-[#E54D2E]/20 rounded-full text-[#E54D2E] text-xs"
+              >{{ selectedProject.category }}</span
+            >
+            <span class="text-white/40 text-sm font-mono">{{ selectedProject.year }}</span>
+          </div>
+          <h2 class="text-3xl lg:text-4xl text-white font-medium">{{ selectedProject.title }}</h2>
+        </div>
+        <span class="text-6xl opacity-30">{{ selectedProject.icon }}</span>
+      </div>
+
+      <!-- Project Image Placeholder -->
+      <div
+        class="w-full h-64 bg-gradient-to-br rounded-xl mb-8 flex items-center justify-center"
+        [class.from-[#1a0508]]="selectedProject.category === 'E-commerce'"
+        [class.to-[#3d0e15]]="selectedProject.category === 'E-commerce'"
+        [class.from-[#0a1520]]="selectedProject.category === 'Dashboard'"
+        [class.to-[#1a2d40]]="selectedProject.category === 'Dashboard'"
+        [class.from-[#1a1500]]="selectedProject.category === 'Mobile'"
+        [class.to-[#332b00]]="selectedProject.category === 'Mobile'"
+        [class.from-[#001a1a]]="selectedProject.category === 'API'"
+        [class.to-[#003333]]="selectedProject.category === 'API'"
+      >
+        <span class="text-8xl">{{ selectedProject.icon }}</span>
+      </div>
+
+      <!-- Description -->
+      <div class="space-y-6 mb-8">
+        <p class="text-white/70 leading-relaxed">{{ selectedProject.description }}</p>
+        <p class="text-white/50 leading-relaxed">{{ selectedProject.longDescription }}</p>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="mb-8">
+        <h4 class="text-white/40 text-sm mb-3">Technologies</h4>
+        <div class="flex flex-wrap gap-2">
+          <span
+            *ngFor="let tech of selectedProject.tech"
+            class="px-4 py-2 bg-[#0A0A0A] border border-white/5 rounded-lg text-white/70 text-sm"
+          >
+            {{ tech }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div *ngIf="selectedProject.features" class="mb-8">
+        <h4 class="text-white/40 text-sm mb-3">Key Features</h4>
+        <ul class="space-y-2">
+          <li
+            *ngFor="let feature of selectedProject.features"
+            class="flex items-start gap-3 text-white/60 text-sm"
+          >
+            <span class="text-[#E54D2E] mt-1">•</span>
+            {{ feature }}
+          </li>
+        </ul>
+      </div>
+
+      <!-- Links -->
+      <div class="flex flex-wrap gap-4 pt-6 border-t border-white/5">
+        <a
+          *ngIf="selectedProject.liveUrl"
+          [href]="selectedProject.liveUrl"
+          target="_blank"
+          class="px-6 py-3 bg-[#E54D2E] text-white text-sm rounded-full hover:bg-[#FF6B4A] transition-colors inline-flex items-center gap-2"
+        >
+          <span>Live Demo</span>
+          <span>→</span>
+        </a>
+        <a
+          *ngIf="selectedProject.githubUrl"
+          [href]="selectedProject.githubUrl"
+          target="_blank"
+          class="px-6 py-3 border border-white/10 text-white/60 text-sm rounded-full hover:border-[#E54D2E]/30 hover:text-white transition-colors inline-flex items-center gap-2"
+        >
+          <span>GitHub Repository</span>
+          <span>↗</span>
+        </a>
+        <a
+          *ngIf="selectedProject.caseStudyUrl"
+          [href]="selectedProject.caseStudyUrl"
+          target="_blank"
+          class="px-6 py-3 border border-white/10 text-white/60 text-sm rounded-full hover:border-[#E54D2E]/30 hover:text-white transition-colors"
+        >
+          View Case Study
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

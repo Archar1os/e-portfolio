@@ -1,467 +1,584 @@
 <!-- ===============================================
-     ARCHARIOS - ABOUT PAGE
-     Pure Tailwind | Dark Theme | No custom config needed
+     ARCHARIOS - ABOUT ME
+     Real Portfolio | Personal | Professional | Authentic
      =============================================== -->
 
-<!-- Floating Background Elements - using standard animations -->
-<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-  <div
-    class="absolute w-[400px] h-[400px] top-[10%] -left-[100px] rounded-full bg-[#E54D2E]/10 blur-[80px] animate-pulse"
-  ></div>
-  <div
-    class="absolute w-[500px] h-[500px] bottom-[20%] -right-[100px] rounded-full bg-[#E54D2E]/5 blur-[80px] animate-pulse delay-1000"
-  ></div>
-  <div
-    class="absolute w-[300px] h-[300px] top-[40%] right-[20%] rounded-full bg-[#E54D2E]/8 blur-[80px] animate-pulse delay-2000"
-  ></div>
-</div>
-
-<main class="relative z-10 bg-[#0A0A0A] min-h-screen text-white">
+<main class="bg-[#0A0A0A] min-h-screen text-white">
   <!-- ===============================================
-       CHAPTER I - THE ORIGIN
+       HERO SECTION - WHO I AM
        =============================================== -->
-  <section class="relative min-h-screen flex items-center pt-40 pb-20 border-b border-white/5">
-    <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
-      <!-- Chapter Meta -->
-      <div class="flex items-center gap-6 mb-16 font-mono">
-        <span
-          class="text-[#E54D2E] text-sm tracking-wider relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-8 after:h-px after:bg-[#E54D2E]"
-          >I</span
+  <section class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
+    <!-- Subtle background pattern -->
+    <div
+      class="absolute inset-0 opacity-[0.02]"
+      style="
+        background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0);
+        background-size: 40px 40px;
+      "
+    ></div>
+
+    <div class="container mx-auto px-6 lg:px-12 max-w-7xl relative z-10">
+      <!-- Breadcrumb -->
+      <div class="flex items-center gap-3 text-white/30 text-sm mb-12 font-mono">
+        <a
+          (click)="navigateTo('home')"
+          class="hover:text-[#E54D2E] transition-colors cursor-pointer"
+          >Home</a
         >
-        <span class="text-white/30 text-xs tracking-[0.3em] uppercase">The Origin</span>
-      </div>
-
-      <!-- Grid -->
-      <div class="grid lg:grid-cols-2 gap-20 items-center">
-        <!-- Left - Visual Story -->
-        <div class="relative">
-          <div class="relative h-[500px]">
-            <!-- Main Art Piece -->
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-[#151515] to-[#0A0A0A] border border-white/5 rounded-2xl overflow-hidden shadow-2xl"
-            >
-              <div
-                class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_#E54D2E_0%,_transparent_70%)] opacity-10"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 right-0 p-10 bg-gradient-to-t from-black/90 to-transparent"
-              >
-                <div class="text-8xl mb-2 drop-shadow-2xl">🌅</div>
-                <div class="text-white/70 text-sm tracking-wide">Pampanga, Philippines</div>
-              </div>
-            </div>
-
-            <!-- Floating Elements - using transform transitions -->
-            <div
-              class="absolute -top-5 -right-5 bg-[#1F1F1F] border border-white/10 rounded-full px-6 py-3 shadow-xl backdrop-blur-sm hover:-translate-y-2 transition-transform duration-700"
-            >
-              <span class="text-[#E54D2E] font-semibold text-lg">'23</span>
-            </div>
-            <div
-              class="absolute -bottom-5 -left-5 bg-[#1F1F1F] border border-white/10 rounded-full px-6 py-3 shadow-xl backdrop-blur-sm hover:-translate-y-2 transition-transform duration-700 delay-150"
-            >
-              <span class="text-2xl">🎓</span>
-            </div>
-            <div
-              class="absolute top-1/2 -left-10 bg-[#1F1F1F] border border-white/10 rounded-full px-6 py-3 shadow-xl backdrop-blur-sm hover:-translate-y-2 transition-transform duration-700 delay-300"
-            >
-              <span class="text-white/70 text-sm whitespace-nowrap">First line of code</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right - Narrative -->
-        <div class="space-y-8">
-          <h2 class="space-y-2">
-            <span class="block text-2xl font-light text-white/50">Every creator has a</span>
-            <span
-              class="block text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#E54D2E] to-[#FF8A5C] bg-clip-text text-transparent"
-              >beginning.</span
-            >
-          </h2>
-
-          <div class="space-y-6">
-            <p class="text-lg text-white/80 leading-relaxed font-light">
-              It started with curiosity. A 19-year-old from Pampanga, staring at a screen, wondering
-              how the magic happened. That wondering became a question. That question became an
-              obsession.
-            </p>
-            <p class="text-white/60 leading-relaxed">
-              In 2023, I enrolled at Holy Angel University not really knowing what I was getting
-              into. I just knew I wanted to build things. Things that people could see, touch, feel.
-              Digital things that felt almost... alive.
-            </p>
-            <p class="pl-5 border-l-4 border-[#E54D2E] text-white italic">
-              The first website I built was terrible. Ugly colors. Broken links. But it was mine.
-              And something clicked.
-            </p>
-            <p class="text-white/60 leading-relaxed">
-              That terrible website taught me more than any tutorial ever could. It taught me that
-              perfection is a process. That every master was once a beginner. That the only way out
-              is through.
-            </p>
-          </div>
-
-          <!-- Personal Quote -->
-          <div
-            class="relative bg-[#151515] border border-white/5 rounded-2xl p-8 mt-8 group hover:border-[#E54D2E]/30 transition-all"
-          >
-            <span class="absolute top-2 left-4 text-7xl text-[#E54D2E]/20 font-serif">"</span>
-            <p class="relative z-10 text-xl font-light text-white mb-2">
-              I didn't choose code. Code chose me.
-            </p>
-            <p class="text-white/40 text-sm font-mono">— Smith, 2023</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===============================================
-       CHAPTER II - THE EVOLUTION
-       =============================================== -->
-  <section class="py-32 bg-[#151515] border-b border-white/5">
-    <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
-      <!-- Chapter Meta -->
-      <div class="flex items-center gap-6 mb-16 font-mono">
-        <span
-          class="text-[#E54D2E] text-sm tracking-wider relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-8 after:h-px after:bg-[#E54D2E]"
-          >II</span
-        >
-        <span class="text-white/30 text-xs tracking-[0.3em] uppercase">The Evolution</span>
-      </div>
-
-      <!-- Timeline -->
-      <div class="space-y-8 mb-20">
-        <div
-          *ngFor="let moment of evolutionMoments; let i = index"
-          class="relative grid md:grid-cols-2 gap-8 p-6 group hover:bg-white/5 rounded-2xl transition-all duration-500"
-          [class.md:text-right]="i % 2 !== 0"
-        >
-          <!-- Content -->
-          <div [class.md:order-2]="i % 2 !== 0">
-            <div
-              class="bg-[#0A0A0A] border border-white/5 rounded-xl p-8 hover:border-[#E54D2E]/30 transition-all group-hover:-translate-y-1 duration-300"
-            >
-              <span class="text-[#E54D2E] font-mono text-sm">{{ moment.year }}</span>
-              <h3 class="text-xl text-white font-medium mt-3 mb-2">{{ moment.title }}</h3>
-              <p class="text-white/60 text-sm leading-relaxed">{{ moment.description }}</p>
-              <div class="flex flex-wrap gap-2 mt-4">
-                <span
-                  *ngFor="let detail of moment.details"
-                  class="px-3 py-1 bg-[#E54D2E]/10 border border-[#E54D2E]/20 rounded-full text-xs text-[#E54D2E]"
-                >
-                  {{ detail }}
-                </span>
-              </div>
-              <div
-                class="absolute bottom-4 right-4 text-4xl opacity-10 group-hover:opacity-30 transition-opacity"
-              >
-                {{ moment.emoji }}
-              </div>
-            </div>
-          </div>
-          <div></div>
-        </div>
-      </div>
-
-      <!-- Growth Stats - using hover animations -->
-      <div class="flex flex-wrap justify-center gap-8 mt-20">
-        <div
-          class="w-36 h-36 rounded-full bg-[#1F1F1F] border border-white/5 flex flex-col items-center justify-center shadow-xl hover:border-[#E54D2E] hover:scale-110 hover:shadow-[#E54D2E]/20 transition-all duration-300"
-        >
-          <span class="text-3xl text-[#E54D2E] font-semibold">30+</span>
-          <span class="text-white/40 text-xs mt-1">Projects</span>
-        </div>
-        <div
-          class="w-36 h-36 rounded-full bg-[#1F1F1F] border border-white/5 flex flex-col items-center justify-center shadow-xl hover:border-[#E54D2E] hover:scale-110 hover:shadow-[#E54D2E]/20 transition-all duration-300 delay-75"
-        >
-          <span class="text-3xl text-[#E54D2E] font-semibold">15</span>
-          <span class="text-white/40 text-xs mt-1">Clients</span>
-        </div>
-        <div
-          class="w-36 h-36 rounded-full bg-[#1F1F1F] border border-white/5 flex flex-col items-center justify-center shadow-xl hover:border-[#E54D2E] hover:scale-110 hover:shadow-[#E54D2E]/20 transition-all duration-300 delay-150"
-        >
-          <span class="text-3xl text-[#E54D2E] font-semibold">3+</span>
-          <span class="text-white/40 text-xs mt-1">Years</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===============================================
-       CHAPTER III - THE CRAFT
-       =============================================== -->
-  <section class="py-32 bg-[#0A0A0A] border-b border-white/5">
-    <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
-      <!-- Chapter Meta -->
-      <div class="flex items-center gap-6 mb-16 font-mono">
-        <span
-          class="text-[#E54D2E] text-sm tracking-wider relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-8 after:h-px after:bg-[#E54D2E]"
-          >III</span
-        >
-        <span class="text-white/30 text-xs tracking-[0.3em] uppercase">The Craft</span>
-      </div>
-
-      <!-- Philosophy -->
-      <div class="max-w-3xl mx-auto text-center mb-20">
-        <p class="text-3xl lg:text-4xl font-light text-white leading-relaxed">
-          I believe in
-          <span
-            class="text-[#E54D2E] relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-px after:bg-gradient-to-r after:from-[#E54D2E] after:to-transparent"
-            >slow design</span
-          >. In code that breathes. In interfaces that feel like conversations, not transactions.
-        </p>
-      </div>
-
-      <!-- Skills Grid -->
-      <div class="grid md:grid-cols-3 gap-6 mb-16">
-        <!-- Frontend -->
-        <div
-          class="bg-[#151515] border border-white/5 rounded-2xl p-8 hover:border-[#E54D2E]/30 hover:-translate-y-1 transition-all duration-300 group"
-        >
-          <div class="flex items-center gap-3 mb-8">
-            <span class="text-3xl group-hover:scale-110 transition-transform">🌱</span>
-            <h3 class="text-xl text-white">Frontend</h3>
-          </div>
-          <div class="space-y-5">
-            <div *ngFor="let skill of frontendSkills" class="space-y-2">
-              <div class="flex justify-between text-sm">
-                <span class="text-white/70">{{ skill.name }}</span>
-                <span class="text-[#E54D2E]">{{ skill.level }}%</span>
-              </div>
-              <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
-                <div
-                  class="h-full bg-gradient-to-r from-[#E54D2E] to-[#FF8A5C] rounded-full transition-all duration-1000"
-                  [style.width.%]="skill.level"
-                ></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Backend -->
-        <div
-          class="bg-[#151515] border border-white/5 rounded-2xl p-8 hover:border-[#E54D2E]/30 hover:-translate-y-1 transition-all duration-300 group"
-        >
-          <div class="flex items-center gap-3 mb-8">
-            <span class="text-3xl group-hover:scale-110 transition-transform">🌿</span>
-            <h3 class="text-xl text-white">Backend</h3>
-          </div>
-          <div class="space-y-5">
-            <div *ngFor="let skill of backendSkills" class="space-y-2">
-              <div class="flex justify-between text-sm">
-                <span class="text-white/70">{{ skill.name }}</span>
-                <span class="text-[#E54D2E]">{{ skill.level }}%</span>
-              </div>
-              <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
-                <div
-                  class="h-full bg-gradient-to-r from-[#E54D2E] to-[#FF8A5C] rounded-full transition-all duration-1000"
-                  [style.width.%]="skill.level"
-                ></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Design -->
-        <div
-          class="bg-[#151515] border border-white/5 rounded-2xl p-8 hover:border-[#E54D2E]/30 hover:-translate-y-1 transition-all duration-300 group"
-        >
-          <div class="flex items-center gap-3 mb-8">
-            <span class="text-3xl group-hover:scale-110 transition-transform">🌸</span>
-            <h3 class="text-xl text-white">Design</h3>
-          </div>
-          <div class="space-y-5">
-            <div *ngFor="let skill of designSkills" class="space-y-2">
-              <div class="flex justify-between text-sm">
-                <span class="text-white/70">{{ skill.name }}</span>
-                <span class="text-[#E54D2E]">{{ skill.level }}%</span>
-              </div>
-              <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
-                <div
-                  class="h-full bg-gradient-to-r from-[#E54D2E] to-[#FF8A5C] rounded-full transition-all duration-1000"
-                  [style.width.%]="skill.level"
-                ></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tools -->
-      <div class="mt-16">
-        <h3 class="text-center text-white/40 text-sm tracking-wider mb-8">THE WORKSHOP</h3>
-        <div class="flex flex-wrap justify-center gap-4">
-          <span
-            *ngFor="let tool of tools"
-            class="flex items-center gap-2 px-5 py-3 bg-[#151515] border border-white/5 rounded-full text-white/70 hover:border-[#E54D2E] hover:text-white hover:-translate-y-1 transition-all duration-300"
-          >
-            <span>{{ tool.icon }}</span>
-            <span class="text-sm">{{ tool.name }}</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===============================================
-       CHAPTER IV - THE WISDOM
-       =============================================== -->
-  <section class="py-32 bg-[#151515] border-b border-white/5">
-    <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
-      <!-- Chapter Meta -->
-      <div class="flex items-center gap-6 mb-16 font-mono">
-        <span
-          class="text-[#E54D2E] text-sm tracking-wider relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-8 after:h-px after:bg-[#E54D2E]"
-          >IV</span
-        >
-        <span class="text-white/30 text-xs tracking-[0.3em] uppercase">The Wisdom</span>
-      </div>
-
-      <!-- Certifications -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
-        <div
-          *ngFor="let cert of certifications; let i = index"
-          class="group bg-[#0A0A0A] border border-white/5 rounded-xl p-6 relative overflow-hidden hover:border-[#E54D2E]/30 hover:-translate-y-1 transition-all duration-300"
-          [style.transitionDelay]="i * 50 + 'ms'"
-        >
-          <div
-            class="absolute top-2 right-2 w-16 h-8 bg-[#E54D2E]/10 transform rotate-45 translate-x-4 group-hover:translate-x-2 transition-all"
-          ></div>
-          <span class="text-[#E54D2E] font-mono text-xs">{{ cert.year }}</span>
-          <h4 class="text-white font-medium mt-3 mb-1">{{ cert.name }}</h4>
-          <p class="text-white/40 text-sm">{{ cert.issuer }}</p>
-        </div>
-      </div>
-
-      <!-- Learning Quote -->
-      <div class="max-w-2xl mx-auto text-center relative">
-        <span class="absolute -top-5 -left-5 text-6xl text-[#E54D2E]/20 font-serif">"</span>
-        <p class="text-xl text-white/70 font-light italic leading-relaxed">
-          The more I learn, the more I realize how much I don't know. And that's beautiful.
-        </p>
-        <span class="absolute -bottom-10 -right-5 text-6xl text-[#E54D2E]/20 font-serif">"</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===============================================
-       CHAPTER V - THE HUMAN
-       =============================================== -->
-  <section class="py-32 bg-[#0A0A0A] border-b border-white/5">
-    <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
-      <!-- Chapter Meta -->
-      <div class="flex items-center gap-6 mb-16 font-mono">
-        <span
-          class="text-[#E54D2E] text-sm tracking-wider relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-8 after:h-px after:bg-[#E54D2E]"
-          >V</span
-        >
-        <span class="text-white/30 text-xs tracking-[0.3em] uppercase">The Human</span>
+        <span>/</span>
+        <span class="text-[#E54D2E]">About</span>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <!-- Portrait -->
-        <div class="text-center">
-          <div class="relative w-72 h-72 mx-auto mb-6 group">
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-[#151515] to-[#0A0A0A] border border-white/5 rounded-full shadow-2xl flex items-center justify-center"
+        <!-- LEFT: Personal Introduction -->
+        <div class="space-y-8">
+          <!-- Hello badge -->
+          <div
+            class="inline-flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-4 py-2"
+          >
+            <span class="relative flex h-2 w-2">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+              ></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span class="text-white/60 text-sm">Available for opportunities</span>
+          </div>
+
+          <!-- Name -->
+          <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold">
+            <span class="text-white">Smith Dainielle</span>
+            <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#E54D2E] to-[#FF8A5C]"
+              >L. Romero</span
             >
-              <span
-                class="text-8xl transform group-hover:scale-110 transition-transform duration-300"
-                >🧑‍💻</span
-              >
-            </div>
-            <div
-              class="absolute -inset-4 bg-[#E54D2E] rounded-full opacity-10 blur-2xl group-hover:opacity-20 transition-opacity"
-            ></div>
+          </h1>
+
+          <!-- Title -->
+          <div class="text-xl text-white/60 font-light">
+            Web Developer & UI/UX Designer based in Pampanga, Philippines
           </div>
-          <p class="text-white/40 text-sm font-mono">Smith Dainielle L. Romero · 2025</p>
-        </div>
 
-        <!-- Story -->
-        <div class="space-y-6">
-          <p class="text-lg text-white/70 leading-relaxed pl-5 border-l-4 border-[#E54D2E]/30">
-            When I'm not coding, you'll find me with a camera in hand, chasing golden hour. Or
-            buried in a sci-fi novel. Or losing myself in ambient music.
-          </p>
-          <p class="text-white/60 leading-relaxed">
-            I believe the best digital experiences come from living analog lives. From feeling the
-            sun, tasting good coffee, having real conversations.
-          </p>
+          <!-- Short bio -->
+          <div class="space-y-4 text-white/70 leading-relaxed">
+            <p>
+              I'm a 20-year-old web developer with a passion for creating digital experiences that
+              are not only beautiful but also meaningful. I believe that great design is about more
+              than just aesthetics—it's about solving problems and connecting with people.
+            </p>
+            <p>
+              Currently pursuing my BS in Web Development at Holy Angel University, I've spent the
+              last 3 years working with clients ranging from local startups to international
+              businesses, helping them bring their ideas to life on the web.
+            </p>
+          </div>
 
-          <!-- Interests -->
-          <div class="relative mt-8">
-            <div
-              class="absolute inset-0 bg-[radial-gradient(circle_at_center,_#E54D2E_1px,_transparent_1px)] bg-[length:30px_30px] opacity-5"
-            ></div>
-            <div class="relative flex flex-wrap gap-3">
-              <span
-                *ngFor="let interest of interests; let i = index"
-                class="px-4 py-2 bg-[#151515] border border-white/5 rounded-full text-white/70 hover:border-[#E54D2E] hover:text-white hover:-translate-y-1 transition-all duration-300 text-sm flex items-center gap-2"
-                [style.transitionDelay]="i * 30 + 'ms'"
-              >
-                <span>{{ interest.icon }}</span>
-                {{ interest.text }}
-              </span>
+          <!-- Quick facts -->
+          <div class="grid grid-cols-3 gap-4 pt-4">
+            <div>
+              <div class="text-2xl font-bold text-[#E54D2E]">3+</div>
+              <div class="text-white/40 text-sm">Years Coding</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-[#E54D2E]">20+</div>
+              <div class="text-white/40 text-sm">Projects Done</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-[#E54D2E]">100%</div>
+              <div class="text-white/40 text-sm">Client Sat</div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Personal Mantra -->
-      <div class="text-center mt-20 pt-10 border-t border-white/5">
-        <p class="text-2xl lg:text-3xl font-light text-white tracking-wide">
-          Build with purpose. Live with passion. Leave a mark.
-        </p>
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a
+              (click)="scrollToStory()"
+              class="group px-6 py-3 bg-[#E54D2E] text-white rounded-full hover:bg-[#FF6B4A] transition-all cursor-pointer inline-flex items-center gap-2"
+            >
+              <span>Read my story</span>
+              <span class="group-hover:translate-y-1 transition-transform">↓</span>
+            </a>
+            <a
+              (click)="navigateTo('contact')"
+              class="group px-6 py-3 border border-white/10 text-white/70 hover:text-white hover:border-[#E54D2E]/30 rounded-full transition-all cursor-pointer inline-flex items-center gap-2"
+            >
+              <span>Let's talk</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Profile Image/Card -->
+        <div class="relative">
+          <!-- Main profile card -->
+          <div
+            class="relative bg-gradient-to-br from-[#151515] to-[#0A0A0A] border border-white/10 rounded-3xl p-8 shadow-2xl"
+          >
+            <!-- Decorative elements -->
+            <div
+              class="absolute -top-4 -right-4 w-24 h-24 bg-[#E54D2E]/10 rounded-full blur-2xl"
+            ></div>
+            <div
+              class="absolute -bottom-4 -left-4 w-32 h-32 bg-[#E54D2E]/10 rounded-full blur-2xl"
+            ></div>
+
+            <!-- Profile image placeholder -->
+            <div class="relative w-40 h-40 mx-auto mb-6">
+              <div class="absolute inset-0 bg-[#E54D2E] rounded-full blur-xl opacity-30"></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-[#E54D2E] to-[#FF8A5C] rounded-full p-1"
+              >
+                <div
+                  class="w-full h-full bg-[#0A0A0A] rounded-full flex items-center justify-center"
+                >
+                  <span class="text-5xl">👨‍💻</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Name and location -->
+            <h3 class="text-2xl text-white font-medium text-center mb-1">Smith Romero</h3>
+            <p class="text-[#E54D2E] text-center mb-4">@archarios</p>
+
+            <div class="flex items-center justify-center gap-2 text-white/50 text-sm mb-6">
+              <span>📍</span>
+              <span>Pampanga, Philippines</span>
+            </div>
+
+            <!-- Social links -->
+            <div class="flex justify-center gap-3">
+              <a
+                href="https://github.com/archar1os"
+                target="_blank"
+                class="w-10 h-10 bg-white/5 hover:bg-[#E54D2E] rounded-full flex items-center justify-center transition-colors"
+              >
+                <span class="text-white/60 hover:text-white">GH</span>
+              </a>
+              <a
+                href="https://linkedin.com/in/smith-dainielle-romero-03242a328/"
+                target="_blank"
+                class="w-10 h-10 bg-white/5 hover:bg-[#E54D2E] rounded-full flex items-center justify-center transition-colors"
+              >
+                <span class="text-white/60 hover:text-white">IN</span>
+              </a>
+              <a
+                href="mailto:smithdainromero@gmail.com"
+                class="w-10 h-10 bg-white/5 hover:bg-[#E54D2E] rounded-full flex items-center justify-center transition-colors"
+              >
+                <span class="text-white/60 hover:text-white">@</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Floating experience badge -->
+          <div
+            class="absolute -bottom-6 -left-6 bg-[#151515] border border-white/10 rounded-xl p-4 shadow-xl backdrop-blur-sm"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-[#E54D2E]/10 rounded-full flex items-center justify-center">
+                <span class="text-[#E54D2E] text-xl">🎓</span>
+              </div>
+              <div>
+                <div class="text-white font-medium">BS Web Development</div>
+                <div class="text-white/40 text-sm">Holy Angel University</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===============================================
-       CLOSING SECTION
+       MY STORY - Personal Journey
        =============================================== -->
-  <section class="py-32 bg-gradient-to-br from-[#E54D2E] to-[#C43D20] relative overflow-hidden">
-    <div
-      class="absolute inset-0 bg-[radial-gradient(circle_at_20px_20px,_rgba(255,255,255,0.1)_1px,_transparent_0)] bg-[length:40px_40px] opacity-10"
-    ></div>
+  <section id="story" class="py-32 bg-[#151515] border-t border-white/5">
+    <div class="container mx-auto px-6 lg:px-12 max-w-4xl">
+      <!-- Section header -->
+      <div class="text-center mb-16">
+        <span class="text-[#E54D2E] text-sm tracking-[0.3em] uppercase block mb-4">My Story</span>
+        <h2 class="text-4xl lg:text-5xl text-white font-light">
+          From <span class="font-bold text-[#E54D2E]">curiosity</span> to career
+        </h2>
+      </div>
 
-    <div class="relative z-10 container mx-auto px-6 max-w-7xl text-center">
-      <h2 class="text-4xl lg:text-5xl text-white font-light mb-6 leading-tight">
-        Want to write the<br />
-        <span
-          class="font-bold relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:bg-white/30"
-          >next chapter</span
+      <!-- Story content - personal narrative -->
+      <div class="space-y-8 text-white/70 text-lg leading-relaxed">
+        <p
+          class="first-letter:text-7xl first-letter:text-[#E54D2E] first-letter:float-left first-letter:mr-4 first-letter:font-bold"
         >
-        together?
-      </h2>
-      <p class="text-white/80 text-lg mb-10">
-        I'm always open to conversations about life, code, and the spaces between.
-      </p>
-      <a
-        (click)="navigateTo('contact')"
-        class="inline-flex items-center gap-3 px-10 py-4 bg-white text-[#E54D2E] font-medium rounded-full hover:gap-5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-      >
-        <span>Reach out</span>
-        <span class="text-xl">→</span>
-      </a>
+          It started in 2023, in a small room in Pampanga, with a cheap laptop and a lot of
+          curiosity. I was 18, fresh out of high school, and had no idea what I wanted to do with my
+          life. Then I discovered coding—and everything changed.
+        </p>
+
+        <p>
+          I remember building my first website: a terrible, ugly mess of broken HTML and mismatched
+          colors. But when I opened it in a browser and saw something I'd actually created, I felt a
+          rush I'd never experienced before. That moment hooked me. I knew this was what I wanted to
+          do.
+        </p>
+
+        <div class="relative pl-8 border-l-4 border-[#E54D2E] italic text-white/80 my-12">
+          "The first website I built was terrible. But it was mine. And that mattered more than
+          perfection."
+        </div>
+
+        <p>
+          I enrolled at Holy Angel University for BS Web Development, diving headfirst into
+          everything: HTML, CSS, JavaScript, design principles, user experience. Late nights became
+          my norm. Every bug fixed felt like a victory. Every new concept learned opened up new
+          possibilities.
+        </p>
+
+        <p>
+          By my second year, I started taking on freelance clients. Small projects at first—a local
+          coffee shop's website, a friend's portfolio. Each project taught me something new: how to
+          communicate with clients, how to manage timelines, how to translate vague ideas into
+          working code.
+        </p>
+
+        <p>
+          Today, 3 years later, I've worked on over 20 projects, collaborated with clients from
+          around the world, and built a reputation for delivering quality work with attention to
+          detail. But what drives me isn't the projects or the clients—it's still that same feeling
+          I had when I saw my first website working. The magic of creation.
+        </p>
+      </div>
+
+      <!-- Personal signature -->
+      <div class="mt-12 text-right">
+        <div class="font-mono text-[#E54D2E] text-2xl">_archarios</div>
+        <div class="text-white/40">Smith Dainielle L. Romero</div>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="py-8 border-t border-white/5 bg-[#0A0A0A]">
-    <div
-      class="container mx-auto px-6 lg:px-12 max-w-7xl flex flex-col md:flex-row justify-between items-center text-white/30 text-sm"
-    >
-      <div class="flex items-center gap-6">
-        <span class="text-[#E54D2E] font-mono">Archarios</span>
-        <span>© 2025</span>
+  <!-- ===============================================
+       WHAT I DO - Services & Expertise
+       =============================================== -->
+  <section class="py-32 border-t border-white/5">
+    <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
+      <!-- Section header -->
+      <div class="text-center mb-16">
+        <span class="text-[#E54D2E] text-sm tracking-[0.3em] uppercase block mb-4">What I Do</span>
+        <h2 class="text-4xl lg:text-5xl text-white font-light">
+          Turning ideas into <span class="font-bold text-[#E54D2E]">digital reality</span>
+        </h2>
       </div>
-      <div class="flex items-center gap-4 mt-4 md:mt-0">
-        <span>Pampanga, PH</span>
-        <span>·</span>
-        <span class="font-mono px-2 py-1 bg-white/5 rounded">v2.0.organic</span>
+
+      <!-- Services grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Service 1 -->
+        <div
+          class="group bg-[#151515] border border-white/5 rounded-2xl p-8 hover:border-[#E54D2E]/30 hover:-translate-y-2 transition-all"
+        >
+          <div
+            class="w-14 h-14 bg-[#E54D2E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+          >
+            <span class="text-3xl">🌐</span>
+          </div>
+          <h3 class="text-xl text-white font-medium mb-3">Web Development</h3>
+          <p class="text-white/50 text-sm leading-relaxed">
+            Building responsive, performant websites with modern frameworks like React, Angular, and
+            Next.js. Clean code, thoughtful architecture.
+          </p>
+        </div>
+
+        <!-- Service 2 -->
+        <div
+          class="group bg-[#151515] border border-white/5 rounded-2xl p-8 hover:border-[#E54D2E]/30 hover:-translate-y-2 transition-all"
+        >
+          <div
+            class="w-14 h-14 bg-[#E54D2E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+          >
+            <span class="text-3xl">🎨</span>
+          </div>
+          <h3 class="text-xl text-white font-medium mb-3">UI/UX Design</h3>
+          <p class="text-white/50 text-sm leading-relaxed">
+            Designing intuitive, user-centered interfaces in Figma. From wireframes to high-fidelity
+            prototypes, with a focus on user experience.
+          </p>
+        </div>
+
+        <!-- Service 3 -->
+        <div
+          class="group bg-[#151515] border border-white/5 rounded-2xl p-8 hover:border-[#E54D2E]/30 hover:-translate-y-2 transition-all"
+        >
+          <div
+            class="w-14 h-14 bg-[#E54D2E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+          >
+            <span class="text-3xl">📱</span>
+          </div>
+          <h3 class="text-xl text-white font-medium mb-3">Mobile-First Design</h3>
+          <p class="text-white/50 text-sm leading-relaxed">
+            Creating experiences that work beautifully on any device. Responsive by design,
+            optimized for performance.
+          </p>
+        </div>
+
+        <!-- Service 4 -->
+        <div
+          class="group bg-[#151515] border border-white/5 rounded-2xl p-8 hover:border-[#E54D2E]/30 hover:-translate-y-2 transition-all"
+        >
+          <div
+            class="w-14 h-14 bg-[#E54D2E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+          >
+            <span class="text-3xl">⚙️</span>
+          </div>
+          <h3 class="text-xl text-white font-medium mb-3">Full Stack Development</h3>
+          <p class="text-white/50 text-sm leading-relaxed">
+            Building complete applications with Node.js, Express, and MongoDB. REST APIs,
+            authentication, and database design.
+          </p>
+        </div>
+
+        <!-- Service 5 -->
+        <div
+          class="group bg-[#151515] border border-white/5 rounded-2xl p-8 hover:border-[#E54D2E]/30 hover:-translate-y-2 transition-all"
+        >
+          <div
+            class="w-14 h-14 bg-[#E54D2E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+          >
+            <span class="text-3xl">🚀</span>
+          </div>
+          <h3 class="text-xl text-white font-medium mb-3">Performance Optimization</h3>
+          <p class="text-white/50 text-sm leading-relaxed">
+            Making websites fast and efficient. Core Web Vitals, lazy loading, code splitting, and
+            performance audits.
+          </p>
+        </div>
+
+        <!-- Service 6 -->
+        <div
+          class="group bg-[#151515] border border-white/5 rounded-2xl p-8 hover:border-[#E54D2E]/30 hover:-translate-y-2 transition-all"
+        >
+          <div
+            class="w-14 h-14 bg-[#E54D2E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+          >
+            <span class="text-3xl">🤝</span>
+          </div>
+          <h3 class="text-xl text-white font-medium mb-3">Consulting & Strategy</h3>
+          <p class="text-white/50 text-sm leading-relaxed">
+            Helping clients plan and execute their digital projects. Technical guidance,
+            architecture decisions, and best practices.
+          </p>
+        </div>
       </div>
     </div>
-  </footer>
+  </section>
+
+  <!-- ===============================================
+       SKILLS & EXPERTISE
+       =============================================== -->
+  <section class="py-32 bg-[#151515] border-t border-white/5">
+    <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
+      <!-- Section header -->
+      <div class="text-center mb-16">
+        <span class="text-[#E54D2E] text-sm tracking-[0.3em] uppercase block mb-4"
+          >Skills & Expertise</span
+        >
+        <h2 class="text-4xl lg:text-5xl text-white font-light">
+          What I bring to the <span class="font-bold text-[#E54D2E]">table</span>
+        </h2>
+      </div>
+
+      <!-- Skills grid -->
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Technical Skills -->
+        <div class="space-y-6">
+          <h3 class="text-2xl text-white font-light flex items-center gap-3">
+            <span class="w-1 h-6 bg-[#E54D2E]"></span>
+            Technical Skills
+          </h3>
+
+          <div class="space-y-5">
+            <div *ngFor="let skill of technicalSkills">
+              <div class="flex justify-between text-sm mb-2">
+                <span class="text-white/70">{{ skill.name }}</span>
+                <span class="text-[#E54D2E]">{{ skill.level }}%</span>
+              </div>
+              <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                <div
+                  class="h-full bg-gradient-to-r from-[#E54D2E] to-[#FF8A5C] rounded-full transition-all duration-1000"
+                  [style.width.%]="skill.level"
+                  [style.transitionDelay]="skill.delay"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="space-y-6">
+          <h3 class="text-2xl text-white font-light flex items-center gap-3">
+            <span class="w-1 h-6 bg-[#E54D2E]"></span>
+            Soft Skills
+          </h3>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div
+              *ngFor="let skill of softSkills"
+              class="bg-[#0A0A0A] border border-white/5 rounded-xl p-4 hover:border-[#E54D2E]/30 transition-all"
+            >
+              <div class="text-[#E54D2E] text-xl mb-2">{{ skill.icon }}</div>
+              <div class="text-white font-medium">{{ skill.name }}</div>
+              <div class="text-white/40 text-sm">{{ skill.description }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===============================================
+       EXPERIENCE & EDUCATION
+       =============================================== -->
+  <section class="py-32 border-t border-white/5">
+    <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
+      <!-- Section header -->
+      <div class="text-center mb-16">
+        <span class="text-[#E54D2E] text-sm tracking-[0.3em] uppercase block mb-4">Background</span>
+        <h2 class="text-4xl lg:text-5xl text-white font-light">
+          Experience & <span class="font-bold text-[#E54D2E]">Education</span>
+        </h2>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Work Experience -->
+        <div class="space-y-8">
+          <h3 class="text-2xl text-white font-light flex items-center gap-3 mb-8">
+            <span class="w-1 h-6 bg-[#E54D2E]"></span>
+            Work Experience
+          </h3>
+
+          <div
+            *ngFor="let job of workExperience"
+            class="relative pl-8 pb-8 border-l border-white/10 last:pb-0"
+          >
+            <div class="absolute -left-1.5 top-0 w-3 h-3 rounded-full bg-[#E54D2E]"></div>
+            <span class="text-[#E54D2E] text-sm font-mono block mb-2">{{ job.period }}</span>
+            <h4 class="text-xl text-white font-medium">{{ job.position }}</h4>
+            <p class="text-white/40 mb-2">{{ job.company }} · {{ job.location }}</p>
+            <p class="text-white/50 text-sm leading-relaxed">{{ job.description }}</p>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="space-y-8">
+          <h3 class="text-2xl text-white font-light flex items-center gap-3 mb-8">
+            <span class="w-1 h-6 bg-[#E54D2E]"></span>
+            Education
+          </h3>
+
+          <div
+            *ngFor="let edu of education"
+            class="relative pl-8 pb-8 border-l border-white/10 last:pb-0"
+          >
+            <div class="absolute -left-1.5 top-0 w-3 h-3 rounded-full bg-[#E54D2E]"></div>
+            <span class="text-[#E54D2E] text-sm font-mono block mb-2">{{ edu.period }}</span>
+            <h4 class="text-xl text-white font-medium">{{ edu.degree }}</h4>
+            <p class="text-white/40 mb-2">{{ edu.school }} · {{ edu.location }}</p>
+            <p class="text-white/50 text-sm leading-relaxed">{{ edu.description }}</p>
+            <p class="text-white/30 text-sm mt-2">{{ edu.achievement }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===============================================
+       CERTIFICATIONS & ACHIEVEMENTS
+       =============================================== -->
+  <section class="py-32 bg-[#151515] border-t border-white/5">
+    <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
+      <!-- Section header -->
+      <div class="text-center mb-16">
+        <span class="text-[#E54D2E] text-sm tracking-[0.3em] uppercase block mb-4"
+          >Credentials</span
+        >
+        <h2 class="text-4xl lg:text-5xl text-white font-light">
+          Certifications & <span class="font-bold text-[#E54D2E]">Awards</span>
+        </h2>
+      </div>
+
+      <!-- Certifications grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div
+          *ngFor="let cert of certifications"
+          class="bg-[#0A0A0A] border border-white/5 rounded-xl p-6 hover:border-[#E54D2E]/30 hover:-translate-y-1 transition-all"
+        >
+          <div class="flex items-start gap-4">
+            <span class="text-3xl">{{ cert.icon }}</span>
+            <div>
+              <div class="text-[#E54D2E] text-sm font-mono mb-1">{{ cert.year }}</div>
+              <h4 class="text-white font-medium mb-1">{{ cert.name }}</h4>
+              <p class="text-white/40 text-sm">{{ cert.issuer }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===============================================
+       PERSONAL INTERESTS
+       =============================================== -->
+  <section class="py-32 border-t border-white/5">
+    <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
+      <!-- Section header -->
+      <div class="text-center mb-16">
+        <span class="text-[#E54D2E] text-sm tracking-[0.3em] uppercase block mb-4"
+          >Beyond Code</span
+        >
+        <h2 class="text-4xl lg:text-5xl text-white font-light">
+          What I do when I'm not <span class="font-bold text-[#E54D2E]">coding</span>
+        </h2>
+      </div>
+
+      <!-- Interests grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div
+          *ngFor="let interest of interests"
+          class="text-center p-6 bg-[#151515] border border-white/5 rounded-xl hover:border-[#E54D2E]/30 hover:-translate-y-1 transition-all group"
+        >
+          <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">
+            {{ interest.icon }}
+          </div>
+          <div class="text-white font-medium">{{ interest.name }}</div>
+          <div class="text-white/40 text-sm">{{ interest.description }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===============================================
+       CLOSING - CALL TO ACTION
+       =============================================== -->
+  <section class="py-32 bg-gradient-to-br from-[#E54D2E] to-[#C43D20] relative overflow-hidden">
+    <!-- Background pattern -->
+    <div
+      class="absolute inset-0 opacity-10"
+      style="
+        background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0);
+        background-size: 30px 30px;
+      "
+    ></div>
+
+    <div class="container mx-auto px-6 max-w-3xl text-center relative z-10">
+      <h2 class="text-4xl lg:text-5xl text-white font-light mb-6">Want to work together?</h2>
+      <p class="text-white/80 text-lg mb-10">
+        I'm always open to new opportunities, collaborations, and interesting projects. If you have
+        an idea you'd like to discuss, I'd love to hear about it.
+      </p>
+      <a
+        (click)="navigateTo('contact')"
+        class="inline-flex items-center gap-3 px-10 py-4 bg-white text-[#E54D2E] font-medium rounded-full hover:gap-5 hover:shadow-2xl transition-all cursor-pointer"
+      >
+        <span>Get in touch</span>
+        <span class="text-xl">→</span>
+      </a>
+      <p class="text-white/60 text-sm mt-6">Response time: 24-48 hours</p>
+    </div>
+  </section>
 </main>

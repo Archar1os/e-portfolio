@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink} from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -9,13 +10,14 @@ import { CommonModule } from '@angular/common';
   styleUrl: './footer.css',
 })
 export class Footer {
-  currentYear = new Date().getFullYear();
+  
+  currentYear: number = new Date().getFullYear();
 
-  footerNavItems = [
-    { label: 'Home', route: '/' },
-    { label: 'About', route: '/about' },
-    { label: 'Projects', route: '/projects' },
-    { label: 'Resume', route: '/resume' },
-    { label: 'Contact', route: '/contact' }
-  ];
+  constructor(private router: Router) {}
+
+  navigateTo(page: string): void {
+    this.router.navigate([`/${page}`]);
+    // Scroll to top when navigating
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

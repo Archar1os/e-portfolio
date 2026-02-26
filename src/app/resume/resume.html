@@ -1,1 +1,395 @@
-<p>resume works!</p>
+<!-- ===============================================
+     ARCHARIOS - RESUME PAGE
+     Minimalist | Timeline | Professional
+     =============================================== -->
+
+<!-- Floating Background Elements -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+  <div
+    class="absolute w-[400px] h-[400px] top-[10%] -left-[100px] rounded-full bg-[#E54D2E]/5 blur-[80px] animate-pulse"
+  ></div>
+  <div
+    class="absolute w-[300px] h-[300px] bottom-[20%] -right-[50px] rounded-full bg-[#E54D2E]/3 blur-[80px] animate-pulse delay-1000"
+  ></div>
+</div>
+
+<main class="relative z-10 bg-[#0A0A0A] min-h-screen text-white pt-32 pb-20">
+  <!-- ===============================================
+       HEADER SECTION
+       =============================================== -->
+  <div class="container mx-auto px-6 lg:px-12 max-w-6xl mb-16">
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-3 text-white/30 text-sm mb-8 font-mono">
+      <a (click)="navigateTo('home')" class="hover:text-[#E54D2E] transition-colors cursor-pointer"
+        >Home</a
+      >
+      <span>/</span>
+      <span class="text-[#E54D2E]">Resume</span>
+    </div>
+
+    <!-- Header Content -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+      <div>
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-px bg-[#E54D2E]"></div>
+          <span class="text-[#E54D2E] text-sm tracking-[0.3em] uppercase font-light"
+            >Curriculum Vitae</span
+          >
+        </div>
+        <h1 class="text-5xl lg:text-6xl font-light text-white">
+          Professional
+          <span
+            class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E54D2E] to-[#FF8A5C]"
+            >Resume</span
+          >
+        </h1>
+      </div>
+
+      <!-- Download Button -->
+      <div class="flex gap-3">
+        <button
+          (click)="downloadPDF()"
+          class="group flex items-center gap-3 px-6 py-3 bg-[#E54D2E] text-white text-sm font-medium hover:bg-[#FF6B4A] transition-all hover:-translate-y-1 hover:shadow-lg"
+        >
+          <span>Download PDF</span>
+          <span class="text-lg group-hover:translate-y-0.5 transition-transform">↓</span>
+        </button>
+        <button
+          (click)="printResume()"
+          class="group flex items-center gap-3 px-6 py-3 border border-white/10 text-white/70 text-sm font-medium hover:border-[#E54D2E]/30 hover:text-white transition-all"
+        >
+          <span>Print</span>
+          <span class="text-lg">🖨️</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===============================================
+       MAIN CONTENT - 2 COLUMN LAYOUT
+       =============================================== -->
+  <div class="container mx-auto px-6 lg:px-12 max-w-6xl">
+    <div class="grid lg:grid-cols-3 gap-8">
+      <!-- ===============================================
+           LEFT COLUMN - PERSONAL INFO & SKILLS
+           =============================================== -->
+      <div class="lg:col-span-1 space-y-6">
+        <!-- Profile Card -->
+        <div
+          class="bg-[#151515] border border-white/5 rounded-2xl p-8 hover:border-[#E54D2E]/30 transition-all group"
+        >
+          <div class="relative w-24 h-24 mx-auto mb-4">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-[#E54D2E] to-[#FF8A5C] rounded-full opacity-20 group-hover:opacity-30 transition-opacity blur-md"
+            ></div>
+            <div class="absolute inset-0 flex items-center justify-center text-5xl">👨‍💻</div>
+          </div>
+
+          <h2 class="text-xl text-white font-medium text-center mb-1">Smith Dainielle L. Romero</h2>
+          <p class="text-[#E54D2E] text-sm text-center mb-4">Web Developer & UI/UX Designer</p>
+
+          <!-- Contact Info -->
+          <div class="space-y-3 pt-4 border-t border-white/5">
+            <div class="flex items-center gap-3 text-white/60 text-sm">
+              <span class="text-[#E54D2E] text-lg">📍</span>
+              <span>Pampanga, Philippines</span>
+            </div>
+            <div class="flex items-center gap-3 text-white/60 text-sm">
+              <span class="text-[#E54D2E] text-lg">✉️</span>
+              <a
+                href="mailto:smithdainromero@gmail.com"
+                class="hover:text-[#E54D2E] transition-colors"
+                >smithdainromero&#64;gmail.com</a
+              >
+            </div>
+            <div class="flex items-center gap-3 text-white/60 text-sm">
+              <span class="text-[#E54D2E] text-lg">📞</span>
+              <span>+63 960 562 0450</span>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex justify-center gap-3 mt-6">
+            <a
+              href="https://github.com/archar1os"
+              target="_blank"
+              class="w-8 h-8 rounded-full bg-white/5 hover:bg-[#E54D2E] flex items-center justify-center transition-colors"
+            >
+              <span class="text-white/60 hover:text-white text-xs">GH</span>
+            </a>
+            <a
+              href="https://linkedin.com/in/smith-dainielle-romero-03242a328/"
+              target="_blank"
+              class="w-8 h-8 rounded-full bg-white/5 hover:bg-[#E54D2E] flex items-center justify-center transition-colors"
+            >
+              <span class="text-white/60 hover:text-white text-xs">IN</span>
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              class="w-8 h-8 rounded-full bg-white/5 hover:bg-[#E54D2E] flex items-center justify-center transition-colors"
+            >
+              <span class="text-white/60 hover:text-white text-xs">X</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
+          <h3 class="text-white font-medium mb-6 flex items-center gap-2">
+            <span class="w-1 h-4 bg-[#E54D2E]"></span>
+            Technical Skills
+          </h3>
+
+          <div class="space-y-6">
+            <!-- Frontend -->
+            <div>
+              <div class="flex justify-between text-sm mb-3">
+                <span class="text-white/70">Frontend</span>
+                <span class="text-[#E54D2E]">90%</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  *ngFor="let skill of frontendSkills"
+                  class="px-3 py-1.5 bg-[#0A0A0A] border border-white/5 rounded-lg text-white/70 text-xs hover:border-[#E54D2E]/30 hover:text-[#E54D2E] transition-all"
+                >
+                  {{ skill }}
+                </span>
+              </div>
+            </div>
+
+            <!-- Backend -->
+            <div>
+              <div class="flex justify-between text-sm mb-3">
+                <span class="text-white/70">Backend</span>
+                <span class="text-[#E54D2E]">85%</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  *ngFor="let skill of backendSkills"
+                  class="px-3 py-1.5 bg-[#0A0A0A] border border-white/5 rounded-lg text-white/70 text-xs hover:border-[#E54D2E]/30 hover:text-[#E54D2E] transition-all"
+                >
+                  {{ skill }}
+                </span>
+              </div>
+            </div>
+
+            <!-- Design -->
+            <div>
+              <div class="flex justify-between text-sm mb-3">
+                <span class="text-white/70">Design</span>
+                <span class="text-[#E54D2E]">88%</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  *ngFor="let skill of designSkills"
+                  class="px-3 py-1.5 bg-[#0A0A0A] border border-white/5 rounded-lg text-white/70 text-xs hover:border-[#E54D2E]/30 hover:text-[#E54D2E] transition-all"
+                >
+                  {{ skill }}
+                </span>
+              </div>
+            </div>
+
+            <!-- Tools -->
+            <div>
+              <div class="flex justify-between text-sm mb-3">
+                <span class="text-white/70">Tools</span>
+                <span class="text-[#E54D2E]">92%</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  *ngFor="let tool of tools"
+                  class="px-3 py-1.5 bg-[#0A0A0A] border border-white/5 rounded-lg text-white/70 text-xs hover:border-[#E54D2E]/30 hover:text-[#E54D2E] transition-all"
+                >
+                  {{ tool }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
+          <h3 class="text-white font-medium mb-6 flex items-center gap-2">
+            <span class="w-1 h-4 bg-[#E54D2E]"></span>
+            Languages
+          </h3>
+
+          <div class="space-y-4">
+            <div *ngFor="let lang of languages" class="space-y-2">
+              <div class="flex justify-between text-sm">
+                <span class="text-white/70">{{ lang.name }}</span>
+                <span class="text-[#E54D2E]">{{ lang.level }}</span>
+              </div>
+              <div class="h-1 bg-white/5 rounded-full overflow-hidden">
+                <div
+                  class="h-full bg-gradient-to-r from-[#E54D2E] to-[#FF8A5C] rounded-full"
+                  [style.width.%]="lang.percentage"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
+          <h3 class="text-white font-medium mb-4 flex items-center gap-2">
+            <span class="w-1 h-4 bg-[#E54D2E]"></span>
+            Soft Skills
+          </h3>
+
+          <div class="flex flex-wrap gap-2">
+            <span
+              *ngFor="let skill of softSkills"
+              class="px-3 py-1.5 bg-[#0A0A0A] border border-white/5 rounded-full text-white/60 text-xs hover:border-[#E54D2E]/30 hover:text-white transition-all"
+            >
+              {{ skill }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===============================================
+           RIGHT COLUMN - EXPERIENCE & EDUCATION
+           =============================================== -->
+      <div class="lg:col-span-2 space-y-6">
+        <!-- Professional Summary -->
+        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
+          <h3 class="text-white font-medium mb-4 flex items-center gap-2">
+            <span class="w-1 h-4 bg-[#E54D2E]"></span>
+            Professional Summary
+          </h3>
+          <p class="text-white/60 leading-relaxed">
+            Passionate web developer with 3+ years of experience creating modern, responsive
+            websites and applications. Skilled in front-end technologies (React, Angular,
+            TypeScript) and back-end development (Node.js, Express). Strong background in UI/UX
+            design principles and project management. Seeking opportunities to contribute to
+            innovative projects and grow as a full-stack developer.
+          </p>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
+          <h3 class="text-white font-medium mb-8 flex items-center gap-2">
+            <span class="w-1 h-4 bg-[#E54D2E]"></span>
+            Work Experience
+          </h3>
+
+          <div class="space-y-8">
+            <div
+              *ngFor="let job of workExperience; let i = index"
+              class="relative pl-8 pb-8 border-l border-white/5 last:border-0 last:pb-0 group hover:border-[#E54D2E]/30 transition-colors"
+            >
+              <!-- Timeline Dot -->
+              <div
+                class="absolute -left-1.5 top-0 w-3 h-3 rounded-full bg-[#E54D2E] opacity-50 group-hover:opacity-100 transition-opacity"
+              ></div>
+
+              <!-- Date -->
+              <span class="text-[#E54D2E] text-sm font-mono block mb-2">{{ job.date }}</span>
+
+              <!-- Title & Company -->
+              <h4 class="text-white text-lg font-medium mb-1">{{ job.title }}</h4>
+              <p class="text-white/40 text-sm mb-3">{{ job.company }} · {{ job.location }}</p>
+
+              <!-- Description -->
+              <p class="text-white/60 text-sm leading-relaxed">{{ job.description }}</p>
+
+              <!-- Achievements -->
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span *ngFor="let achievement of job.achievements" class="text-xs text-white/40"
+                  >• {{ achievement }}</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
+          <h3 class="text-white font-medium mb-8 flex items-center gap-2">
+            <span class="w-1 h-4 bg-[#E54D2E]"></span>
+            Education
+          </h3>
+
+          <div class="space-y-8">
+            <div
+              *ngFor="let edu of education; let i = index"
+              class="relative pl-8 pb-8 border-l border-white/5 last:border-0 last:pb-0 group hover:border-[#E54D2E]/30 transition-colors"
+            >
+              <!-- Timeline Dot -->
+              <div
+                class="absolute -left-1.5 top-0 w-3 h-3 rounded-full bg-[#E54D2E] opacity-50 group-hover:opacity-100 transition-opacity"
+              ></div>
+
+              <!-- Date -->
+              <span class="text-[#E54D2E] text-sm font-mono block mb-2">{{ edu.date }}</span>
+
+              <!-- Degree -->
+              <h4 class="text-white text-lg font-medium mb-1">{{ edu.degree }}</h4>
+              <p class="text-white/40 text-sm mb-3">{{ edu.school }} · {{ edu.location }}</p>
+
+              <!-- Details -->
+              <p class="text-white/60 text-sm leading-relaxed">{{ edu.details }}</p>
+
+              <!-- GPA / Honors -->
+              <div class="mt-3 flex flex-wrap gap-4">
+                <span class="text-xs text-white/40">GPA: {{ edu.gpa }}</span>
+                <span class="text-xs text-white/40">•</span>
+                <span class="text-xs text-white/40">{{ edu.honors }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
+          <h3 class="text-white font-medium mb-6 flex items-center gap-2">
+            <span class="w-1 h-4 bg-[#E54D2E]"></span>
+            Certifications
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div
+              *ngFor="let cert of certifications"
+              class="group p-4 bg-[#0A0A0A] border border-white/5 rounded-xl hover:border-[#E54D2E]/30 transition-all hover:-translate-y-1"
+            >
+              <div class="flex items-start gap-3">
+                <span class="text-[#E54D2E] text-lg">📜</span>
+                <div>
+                  <h4 class="text-white text-sm font-medium mb-1">{{ cert.name }}</h4>
+                  <p class="text-white/40 text-xs mb-2">{{ cert.issuer }} · {{ cert.year }}</p>
+                  <span
+                    class="text-[#E54D2E] text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                    >View →</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Awards -->
+        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
+          <h3 class="text-white font-medium mb-6 flex items-center gap-2">
+            <span class="w-1 h-4 bg-[#E54D2E]"></span>
+            Awards & Recognition
+          </h3>
+
+          <div class="space-y-4">
+            <div
+              *ngFor="let award of awards"
+              class="flex items-start gap-4 p-4 bg-[#0A0A0A] border border-white/5 rounded-xl"
+            >
+              <span class="text-2xl">{{ award.icon }}</span>
+              <div>
+                <h4 class="text-white text-sm font-medium mb-1">{{ award.name }}</h4>
+                <p class="text-white/40 text-xs">{{ award.issuer }} · {{ award.year }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

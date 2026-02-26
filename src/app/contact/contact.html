@@ -1,322 +1,468 @@
-<div class="py-20 px-4 md:px-8 max-w-6xl mx-auto bg-black min-h-screen">
-  <div class="text-center mb-8">
-    <div class="flex flex-col items-center py-5">
-      <div
-        class="inline-flex items-center gap-2 font-mono text-xs tracking-widest text-[#E8302A] uppercase mb-3"
+<!-- ===============================================
+     ARCHARIOS - CONTACT PAGE
+     Minimalist | Interactive | Multiple Channels
+     =============================================== -->
+
+<!-- Floating Background Elements -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+  <div
+    class="absolute w-[500px] h-[500px] top-[5%] -left-[200px] rounded-full bg-[#E54D2E]/5 blur-[100px] animate-pulse"
+  ></div>
+  <div
+    class="absolute w-[400px] h-[400px] bottom-[10%] -right-[150px] rounded-full bg-[#E54D2E]/3 blur-[100px] animate-pulse delay-1000"
+  ></div>
+  <div
+    class="absolute w-[300px] h-[300px] top-[40%] left-[20%] rounded-full bg-[#E54D2E]/4 blur-[80px] animate-pulse delay-2000"
+  ></div>
+</div>
+
+<main class="relative z-10 bg-[#0A0A0A] min-h-screen text-white pt-32 pb-20">
+  <!-- ===============================================
+       HEADER SECTION
+       =============================================== -->
+  <div class="container mx-auto px-6 lg:px-12 max-w-7xl mb-16">
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-3 text-white/30 text-sm mb-8 font-mono">
+      <a (click)="navigateTo('home')" class="hover:text-[#E54D2E] transition-colors cursor-pointer"
+        >Home</a
       >
-        <span>//</span> Say Hello
-      </div>
-      <h2
-        class="font-['Clash_Display'] text-3xl md:text-5xl font-bold text-white relative inline-block"
-      >
-        <span
-          class="relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:bg-[#E8302A]"
-          >Get In Touch</span
-        >
-      </h2>
+      <span>/</span>
+      <span class="text-[#E54D2E]">Contact</span>
     </div>
-    <p class="text-sm text-gray-400 max-w-2xl mx-auto mt-4 leading-relaxed font-light">
-      I'm currently open to new opportunities, collaborations, and interesting projects. Whether you
-      have a question, want to discuss a potential project, or just want to say hello, feel free to
-      reach out!
-    </p>
-    <div class="inline-flex items-center gap-2 text-xs text-gray-500 mt-3">
-      typically responds within 24 hours
+
+    <!-- Header Content -->
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="w-12 h-px bg-[#E54D2E]"></div>
+        <span class="text-[#E54D2E] text-sm tracking-[0.3em] uppercase font-light"
+          >Get in Touch</span
+        >
+      </div>
+      <h1 class="text-5xl lg:text-7xl font-light text-white mb-6">
+        Let's
+        <span
+          class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E54D2E] to-[#FF8A5C]"
+          >connect</span
+        >
+      </h1>
+      <p class="text-white/50 text-lg leading-relaxed max-w-2xl">
+        Have a project in mind? Looking for a collaborator? Or just want to say hello? I'm always
+        open to conversations about design, code, and everything in between.
+      </p>
     </div>
   </div>
 
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-    <!-- Contact Form -->
-    <div class="bg-[#1E1E27] border border-white/10 rounded-xl p-6 md:p-8">
-      <h3 class="font-['Clash_Display'] font-bold text-white mb-6 flex items-center gap-2">
-        <span class="text-lg">✉️</span> Send a Message
-      </h3>
+  <!-- ===============================================
+       MAIN CONTENT - 2 COLUMN LAYOUT
+       =============================================== -->
+  <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
+    <div class="grid lg:grid-cols-2 gap-12">
+      <!-- ===============================================
+           LEFT COLUMN - CONTACT INFO & SOCIAL
+           =============================================== -->
+      <div class="space-y-8">
+        <!-- Availability Card -->
+        <div
+          class="bg-[#151515] border border-white/5 rounded-2xl p-8 relative overflow-hidden group hover:border-[#E54D2E]/30 transition-all"
+        >
+          <div class="absolute top-0 right-0 w-32 h-32 bg-[#E54D2E]/5 rounded-full blur-3xl"></div>
 
-      <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-        <div class="mb-4">
-          <label class="block text-xs font-semibold tracking-wider text-gray-400 uppercase mb-2">
-            Your Name <span class="text-[#E8302A]">*</span>
-          </label>
-          <input
-            type="text"
-            name="name"
-            [(ngModel)]="formData.name"
-            required
-            class="w-full bg-[#111116] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:border-[#E8302A] focus:ring-2 focus:ring-[#E8302A]/20 outline-none transition-all"
-            placeholder="John Smith"
-          />
+          <div class="flex items-center gap-3 mb-6">
+            <span class="relative flex h-3 w-3">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+              ></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
+            <span class="text-white/60 text-sm">Available for freelance work</span>
+          </div>
+
+          <h2 class="text-2xl text-white font-light mb-2">Current Availability</h2>
+          <p class="text-white/40 text-sm leading-relaxed mb-6">
+            I'm currently accepting new projects and collaborations. Response time is typically
+            within 24-48 hours.
+          </p>
+
+          <!-- Response Time Badges -->
+          <div class="flex flex-wrap gap-3">
+            <div
+              class="flex items-center gap-2 px-4 py-2 bg-[#0A0A0A] border border-white/5 rounded-full"
+            >
+              <span class="text-[#E54D2E] text-lg">⚡</span>
+              <span class="text-white/60 text-xs">24h response</span>
+            </div>
+            <div
+              class="flex items-center gap-2 px-4 py-2 bg-[#0A0A0A] border border-white/5 rounded-full"
+            >
+              <span class="text-[#E54D2E] text-lg">🌍</span>
+              <span class="text-white/60 text-xs">UTC+8 (Manila)</span>
+            </div>
+          </div>
         </div>
 
-        <div class="mb-4">
-          <label class="block text-xs font-semibold tracking-wider text-gray-400 uppercase mb-2">
-            Email Address <span class="text-[#E8302A]">*</span>
-          </label>
-          <input
-            type="email"
-            name="email"
-            [(ngModel)]="formData.email"
-            required
-            class="w-full bg-[#111116] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:border-[#E8302A] focus:ring-2 focus:ring-[#E8302A]/20 outline-none transition-all"
-            placeholder="john@example.com"
-          />
+        <!-- Contact Methods -->
+        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
+          <h3 class="text-white font-medium mb-6 flex items-center gap-2">
+            <span class="w-1 h-4 bg-[#E54D2E]"></span>
+            Direct Contact
+          </h3>
+
+          <div class="space-y-5">
+            <!-- Email -->
+            <div
+              class="group flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-all cursor-pointer"
+              (click)="copyToClipboard('smithdainromero@gmail.com', 'email')"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-[#E54D2E]/10 flex items-center justify-center group-hover:bg-[#E54D2E]/20 transition-all"
+              >
+                <span class="text-[#E54D2E] text-xl">✉️</span>
+              </div>
+              <div class="flex-1">
+                <div class="text-white/40 text-xs mb-1">Email</div>
+                <div class="text-white group-hover:text-[#E54D2E] transition-colors">
+                  smithdainromero&#64;gmail.com
+                </div>
+                <div
+                  class="text-white/30 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  {{ copiedField === 'email' ? '✓ Copied!' : 'Click to copy' }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div
+              class="group flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-all cursor-pointer"
+              (click)="copyToClipboard('+63 960 562 0450', 'phone')"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-[#E54D2E]/10 flex items-center justify-center group-hover:bg-[#E54D2E]/20 transition-all"
+              >
+                <span class="text-[#E54D2E] text-xl">📞</span>
+              </div>
+              <div class="flex-1">
+                <div class="text-white/40 text-xs mb-1">Phone</div>
+                <div class="text-white group-hover:text-[#E54D2E] transition-colors">
+                  +63 960 562 0450
+                </div>
+                <div
+                  class="text-white/30 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  {{ copiedField === 'phone' ? '✓ Copied!' : 'Click to copy' }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="group flex items-start gap-4 p-4 rounded-xl">
+              <div class="w-10 h-10 rounded-full bg-[#E54D2E]/10 flex items-center justify-center">
+                <span class="text-[#E54D2E] text-xl">📍</span>
+              </div>
+              <div class="flex-1">
+                <div class="text-white/40 text-xs mb-1">Location</div>
+                <div class="text-white">Pampanga, Philippines</div>
+                <div class="text-white/30 text-xs mt-1">UTC+8 (Manila Time)</div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="mb-4">
-          <label class="block text-xs font-semibold tracking-wider text-gray-400 uppercase mb-2">
-            Phone Number <span class="text-gray-500">(Optional)</span>
-          </label>
-          <input
-            type="tel"
-            name="phone"
-            [(ngModel)]="formData.phone"
-            class="w-full bg-[#111116] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:border-[#E8302A] focus:ring-2 focus:ring-[#E8302A]/20 outline-none transition-all"
-            placeholder="+63 912 345 6789"
-          />
+        <!-- Social Links -->
+        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
+          <h3 class="text-white font-medium mb-6 flex items-center gap-2">
+            <span class="w-1 h-4 bg-[#E54D2E]"></span>
+            Social Media
+          </h3>
+
+          <div class="grid grid-cols-2 gap-3">
+            <a
+              *ngFor="let social of socialLinks"
+              [href]="social.url"
+              target="_blank"
+              class="group flex items-center gap-3 p-4 bg-[#0A0A0A] border border-white/5 rounded-xl hover:border-[#E54D2E]/30 hover:-translate-y-1 transition-all"
+            >
+              <span class="text-2xl group-hover:scale-110 transition-transform">{{
+                social.icon
+              }}</span>
+              <div>
+                <div class="text-white text-sm font-medium">{{ social.name }}</div>
+                <div class="text-white/30 text-xs">{{ social.handle }}</div>
+              </div>
+            </a>
+          </div>
         </div>
 
-        <div class="mb-4">
-          <label class="block text-xs font-semibold tracking-wider text-gray-400 uppercase mb-2">
-            Subject <span class="text-[#E8302A]">*</span>
-          </label>
-          <select
-            name="subject"
-            [(ngModel)]="formData.subject"
-            required
-            class="w-full bg-[#111116] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:border-[#E8302A] focus:ring-2 focus:ring-[#E8302A]/20 outline-none transition-all appearance-none"
-            style="
-              background-image: url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23999999' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>&quot;);
-              background-repeat: no-repeat;
-              background-position: right 1rem center;
-            "
+        <!-- Office Hours -->
+        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
+          <h3 class="text-white font-medium mb-6 flex items-center gap-2">
+            <span class="w-1 h-4 bg-[#E54D2E]"></span>
+            Office Hours
+          </h3>
+
+          <div class="space-y-3">
+            <div
+              *ngFor="let hour of officeHours"
+              class="flex justify-between items-center py-2 border-b border-white/5 last:border-0"
+            >
+              <span class="text-white/60 text-sm">{{ hour.day }}</span>
+              <span
+                class="text-white font-mono text-sm"
+                [class.text-[#E54D2E]]="hour.day === 'Saturday' || hour.day === 'Sunday'"
+              >
+                {{ hour.hours }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===============================================
+           RIGHT COLUMN - CONTACT FORM
+           =============================================== -->
+      <div class="bg-[#151515] border border-white/5 rounded-2xl p-8 lg:p-10">
+        <!-- Form Header -->
+        <div class="mb-8">
+          <h3 class="text-2xl text-white font-light mb-2">Send a Message</h3>
+          <p class="text-white/40 text-sm">
+            Fill out the form below and I'll get back to you within 24 hours.
+          </p>
+        </div>
+
+        <!-- Success Message (shown after submission) -->
+        <div *ngIf="formSubmitted" class="text-center py-12">
+          <div
+            class="w-20 h-20 mx-auto bg-[#E54D2E]/20 rounded-full flex items-center justify-center mb-6 animate-bounce"
           >
-            <option value="" disabled selected>Select a subject</option>
-            <option value="project">Project Inquiry</option>
-            <option value="job">Job Opportunity</option>
-            <option value="collaboration">Collaboration</option>
-            <option value="freelance">Freelance Work</option>
-            <option value="general">General Question</option>
-          </select>
+            <span class="text-4xl">✓</span>
+          </div>
+          <h4 class="text-2xl text-white font-light mb-2">Message Sent!</h4>
+          <p class="text-white/40 mb-8">
+            Thank you for reaching out. I'll respond within 24 hours.
+          </p>
+          <button
+            (click)="resetForm()"
+            class="px-6 py-3 bg-white/5 text-white/60 rounded-full hover:bg-[#E54D2E] hover:text-white transition-all"
+          >
+            Send another message
+          </button>
         </div>
 
-        <div class="mb-4">
-          <label class="block text-xs font-semibold tracking-wider text-gray-400 uppercase mb-2">
-            Message <span class="text-[#E8302A]">*</span>
-          </label>
-          <textarea
-            name="message"
-            [(ngModel)]="formData.message"
-            required
-            rows="4"
-            class="w-full bg-[#111116] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:border-[#E8302A] focus:ring-2 focus:ring-[#E8302A]/20 outline-none transition-all resize-y"
-            placeholder="Hi Smith, I'd like to discuss..."
-          ></textarea>
-        </div>
+        <!-- Contact Form -->
+        <form *ngIf="!formSubmitted" (ngSubmit)="submitForm()" class="space-y-6">
+          <!-- Name Field -->
+          <div class="space-y-2">
+            <label class="block text-white/60 text-sm">
+              Your Name <span class="text-[#E54D2E]">*</span>
+            </label>
+            <input
+              type="text"
+              [(ngModel)]="formData.name"
+              name="name"
+              required
+              class="w-full bg-[#0A0A0A] border border-white/5 rounded-xl px-5 py-4 text-white placeholder-white/20 focus:border-[#E54D2E]/50 focus:outline-none transition-all"
+              placeholder="John Smith"
+            />
+          </div>
 
-        <div class="mb-6">
-          <label class="flex items-start gap-2 text-xs text-gray-400 cursor-pointer">
+          <!-- Email Field -->
+          <div class="space-y-2">
+            <label class="block text-white/60 text-sm">
+              Email Address <span class="text-[#E54D2E]">*</span>
+            </label>
+            <input
+              type="email"
+              [(ngModel)]="formData.email"
+              name="email"
+              required
+              class="w-full bg-[#0A0A0A] border border-white/5 rounded-xl px-5 py-4 text-white placeholder-white/20 focus:border-[#E54D2E]/50 focus:outline-none transition-all"
+              placeholder="john@example.com"
+            />
+          </div>
+
+          <!-- Subject Field -->
+          <div class="space-y-2">
+            <label class="block text-white/60 text-sm">
+              Subject <span class="text-[#E54D2E]">*</span>
+            </label>
+            <select
+              [(ngModel)]="formData.subject"
+              name="subject"
+              required
+              class="w-full bg-[#0A0A0A] border border-white/5 rounded-xl px-5 py-4 text-white/70 focus:border-[#E54D2E]/50 focus:outline-none transition-all appearance-none"
+            >
+              <option value="" disabled selected>Select a subject</option>
+              <option *ngFor="let option of subjectOptions" [value]="option">{{ option }}</option>
+            </select>
+            <!-- Custom dropdown arrow -->
+            <div class="absolute right-8 mt-[-2.5rem] pointer-events-none">
+              <span class="text-white/30">▼</span>
+            </div>
+          </div>
+
+          <!-- Message Field -->
+          <div class="space-y-2">
+            <label class="block text-white/60 text-sm">
+              Message <span class="text-[#E54D2E]">*</span>
+            </label>
+            <textarea
+              [(ngModel)]="formData.message"
+              name="message"
+              required
+              rows="5"
+              class="w-full bg-[#0A0A0A] border border-white/5 rounded-xl px-5 py-4 text-white placeholder-white/20 focus:border-[#E54D2E]/50 focus:outline-none transition-all resize-none"
+              placeholder="Tell me about your project..."
+            ></textarea>
+          </div>
+
+          <!-- Attachment (optional) -->
+          <div class="space-y-2">
+            <label class="block text-white/60 text-sm">Attachment (optional)</label>
+            <div class="relative">
+              <input
+                type="file"
+                (change)="onFileSelected($event)"
+                class="w-full bg-[#0A0A0A] border border-white/5 rounded-xl px-5 py-4 text-white/40 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:bg-[#E54D2E]/10 file:text-[#E54D2E] hover:file:bg-[#E54D2E]/20 transition-all"
+              />
+            </div>
+            <p class="text-white/20 text-xs">Max file size: 10MB (PDF, DOC, IMG)</p>
+          </div>
+
+          <!-- Consent Checkbox -->
+          <div class="flex items-start gap-3">
             <input
               type="checkbox"
-              name="agree"
-              [(ngModel)]="formData.agree"
-              required
-              class="mt-1 accent-[#E8302A]"
+              [(ngModel)]="formData.consent"
+              name="consent"
+              id="consent"
+              class="mt-1 w-4 h-4 bg-[#0A0A0A] border border-white/5 rounded focus:ring-[#E54D2E] focus:ring-offset-0"
             />
+            <label for="consent" class="text-white/40 text-sm">
+              I agree to the
+              <a href="#" class="text-[#E54D2E] hover:underline">privacy policy</a> and consent to
+              being contacted about my inquiry.
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            [disabled]="!isFormValid()"
+            class="w-full group relative py-5 bg-[#E54D2E] text-white font-medium rounded-xl overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#FF6B4A] transition-all"
+          >
+            <span class="relative z-10 flex items-center justify-center gap-3">
+              <span>Send Message</span>
+              <span class="text-xl group-hover:translate-x-1 transition-transform">→</span>
+            </span>
             <span
-              >I agree to the
-              <a href="#" class="text-[#E8302A] hover:underline">privacy policy</a> and consent to
-              being contacted</span
-            >
-          </label>
+              class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform"
+            ></span>
+          </button>
+
+          <!-- Form Footer Note -->
+          <p class="text-white/20 text-xs text-center">
+            Fields marked with <span class="text-[#E54D2E]">*</span> are required
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===============================================
+         MAP / LOCATION SECTION
+         =============================================== -->
+    <div
+      class="mt-16 bg-[#151515] border border-white/5 rounded-2xl overflow-hidden group hover:border-[#E54D2E]/30 transition-all"
+    >
+      <div class="grid md:grid-cols-3">
+        <!-- Map Info -->
+        <div class="md:col-span-1 p-8 bg-gradient-to-br from-[#0A0A0A] to-[#151515]">
+          <h3 class="text-white font-medium mb-4 flex items-center gap-2">
+            <span class="w-1 h-4 bg-[#E54D2E]"></span>
+            Based in Pampanga
+          </h3>
+          <p class="text-white/40 text-sm leading-relaxed mb-6">
+            Working remotely with clients worldwide. Available for travel for project kickoffs and
+            workshops.
+          </p>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2 text-white/30 text-sm">
+              <span class="text-[#E54D2E]">✈️</span>
+              <span>Available for remote work</span>
+            </div>
+            <div class="flex items-center gap-2 text-white/30 text-sm">
+              <span class="text-[#E54D2E]">🌏</span>
+              <span>UTC+8 (Manila Time)</span>
+            </div>
+            <div class="flex items-center gap-2 text-white/30 text-sm">
+              <span class="text-[#E54D2E]">📅</span>
+              <span>Flexible scheduling</span>
+            </div>
+          </div>
+          <button
+            (click)="openMaps()"
+            class="mt-6 text-[#E54D2E] text-sm flex items-center gap-2 hover:gap-3 transition-all"
+          >
+            <span>View on Google Maps</span>
+            <span>→</span>
+          </button>
         </div>
 
-        <button
-          type="submit"
-          [disabled]="!contactForm.valid"
-          class="w-full bg-[#E8302A] text-white font-semibold text-sm px-6 py-3 rounded-lg hover:bg-[#FF4D47] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(232,48,42,0.25)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+        <!-- Map Placeholder -->
+        <div
+          class="md:col-span-2 h-64 md:h-auto bg-gradient-to-br from-[#1a1a1a] to-[#0A0A0A] relative"
         >
-          ✈ Send Message
-        </button>
-      </form>
+          <!-- Grid overlay -->
+          <div
+            class="absolute inset-0 opacity-10"
+            style="
+              background-image:
+                linear-gradient(rgba(229, 77, 46, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(229, 77, 46, 0.1) 1px, transparent 1px);
+              background-size: 50px 50px;
+            "
+          ></div>
 
-      <!-- Success Message (hidden by default) -->
-      <div *ngIf="formSubmitted" class="text-center py-8">
-        <div class="text-4xl mb-3">✅</div>
-        <h3 class="font-['Clash_Display'] text-xl text-[#E8302A] mb-2">Message Sent!</h3>
-        <p class="text-sm text-gray-400">
-          Thank you for reaching out. I'll get back to you within 24 hours.
-        </p>
+          <!-- Pin -->
+          <div
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center"
+          >
+            <div
+              class="w-12 h-12 bg-[#E54D2E] rounded-full flex items-center justify-center animate-bounce shadow-lg shadow-[#E54D2E]/30"
+            >
+              <span class="text-white text-xl">📍</span>
+            </div>
+            <div class="mt-2 text-white/60 text-sm font-mono">Pampanga, PH</div>
+          </div>
+
+          <!-- Coordinates -->
+          <div class="absolute bottom-4 right-4 text-white/20 text-xs font-mono">
+            15.0794° N, 120.6199° E
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Contact Info Panel -->
-    <div class="space-y-6">
-      <!-- Contact Information -->
-      <div class="bg-[#1E1E27] border border-white/10 rounded-xl p-6">
-        <h3 class="font-['Clash_Display'] font-bold text-white mb-4 flex items-center gap-2">
-          <span class="text-lg">📬</span> Contact Information
-        </h3>
-
-        <div class="flex items-start gap-3 mb-4">
-          <div
-            class="w-8 h-8 rounded-lg bg-[#E8302A]/10 border border-[#E8302A]/20 flex items-center justify-center text-sm flex-shrink-0"
-          >
-            ✉️
-          </div>
-          <div>
-            <div class="text-xs font-semibold tracking-wider text-gray-500 uppercase mb-1">
-              Email
-            </div>
-            <div class="text-sm text-white">
-              <a href="mailto:smith.dain.romero@gmail.com" class="hover:text-[#E8302A]"
-                >smith.dain.romero@gmail.com</a
-              >
-            </div>
-            <div class="text-xs text-gray-500 mt-1">For general inquiries</div>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-3 mb-4">
-          <div
-            class="w-8 h-8 rounded-lg bg-[#E8302A]/10 border border-[#E8302A]/20 flex items-center justify-center text-sm flex-shrink-0"
-          >
-            📞
-          </div>
-          <div>
-            <div class="text-xs font-semibold tracking-wider text-gray-500 uppercase mb-1">
-              Phone
-            </div>
-            <div class="text-sm text-white">+63 960 562 0450</div>
-            <div class="text-xs text-gray-500 mt-1">Available Mon-Fri, 9AM-6PM</div>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-3">
-          <div
-            class="w-8 h-8 rounded-lg bg-[#E8302A]/10 border border-[#E8302A]/20 flex items-center justify-center text-sm flex-shrink-0"
-          >
-            📍
-          </div>
-          <div>
-            <div class="text-xs font-semibold tracking-wider text-gray-500 uppercase mb-1">
-              Location
-            </div>
-            <div class="text-sm text-white">Pampanga, Philippines</div>
-            <div class="text-xs text-gray-500 mt-1">Open to remote work worldwide</div>
-          </div>
-        </div>
+    <!-- ===============================================
+         FAQ SECTION (Optional)
+         =============================================== -->
+    <div class="mt-16">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="w-12 h-px bg-[#E54D2E]"></div>
+        <span class="text-[#E54D2E] text-sm tracking-[0.3em] uppercase font-light">FAQ</span>
       </div>
 
-      <!-- Business Hours -->
-      <div class="bg-[#1E1E27] border border-white/10 rounded-xl p-6">
-        <h3 class="font-['Clash_Display'] font-bold text-white mb-4 flex items-center gap-2">
-          <span class="text-lg">🕐</span> Business Hours
-        </h3>
-
-        <div class="space-y-2">
-          <div class="flex justify-between text-sm">
-            <span class="text-gray-300">Monday – Friday</span>
-            <span class="text-gray-400">9:00 AM – 6:00 PM</span>
-          </div>
-          <div class="flex justify-between text-sm">
-            <span class="text-gray-300">Saturday</span>
-            <span class="text-gray-400">10:00 AM – 2:00 PM</span>
-          </div>
-          <div class="flex justify-between text-sm">
-            <span class="text-gray-300">Sunday</span>
-            <span class="text-[#E8302A]">Closed</span>
-          </div>
-          <div class="text-xs text-gray-500 mt-2">Philippine Standard Time UTC+8</div>
-        </div>
-      </div>
-
-      <!-- Social Links -->
-      <div class="bg-[#1E1E27] border border-white/10 rounded-xl p-6">
-        <h3 class="font-['Clash_Display'] font-bold text-white mb-4 flex items-center gap-2">
-          <span class="text-lg">🔗</span> Connect With Me
-        </h3>
-
-        <p class="text-xs text-gray-400 mb-4">
-          Follow me on social media for updates, tutorials, and web development tips.
-        </p>
-
-        <div class="flex flex-wrap gap-2">
-          <a
-            href="https://linkedin.com/in/smith-dainielle-romero-03242a328/"
-            target="_blank"
-            class="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded border border-white/10 text-gray-400 hover:border-[#E8302A] hover:text-[#E8302A] hover:bg-[#E8302A]/10 transition-all"
-            >💼 LinkedIn</a
-          >
-          <a
-            href="https://github.com/archar1os"
-            target="_blank"
-            class="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded border border-white/10 text-gray-400 hover:border-[#E8302A] hover:text-[#E8302A] hover:bg-[#E8302A]/10 transition-all"
-            >🐙 GitHub</a
-          >
-          <a
-            href="#"
-            class="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded border border-white/10 text-gray-400 hover:border-[#E8302A] hover:text-[#E8302A] hover:bg-[#E8302A]/10 transition-all"
-            >🐦 Twitter</a
-          >
-          <a
-            href="#"
-            class="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded border border-white/10 text-gray-400 hover:border-[#E8302A] hover:text-[#E8302A] hover:bg-[#E8302A]/10 transition-all"
-            >📸 Instagram</a
-          >
-          <a
-            href="#"
-            class="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded border border-white/10 text-gray-400 hover:border-[#E8302A] hover:text-[#E8302A] hover:bg-[#E8302A]/10 transition-all"
-            >✏️ CodePen</a
-          >
-        </div>
-      </div>
-
-      <!-- Quick Links -->
-      <div class="bg-[#1E1E27] border border-white/10 rounded-xl p-6">
-        <h3 class="font-['Clash_Display'] font-bold text-white mb-4 flex items-center gap-2">
-          <span class="text-lg">⚡</span> Quick Links
-        </h3>
-
-        <div class="space-y-2">
-          <a
-            routerLink="/resume"
-            class="flex items-center gap-2 text-sm text-[#E8302A] hover:gap-3 transition-all"
-            >📄 View My Resume</a
-          >
-          <a
-            routerLink="/projects"
-            class="flex items-center gap-2 text-sm text-[#E8302A] hover:gap-3 transition-all"
-            >🚀 See My Projects</a
-          >
-          <a
-            href="#"
-            class="flex items-center gap-2 text-sm text-[#E8302A] hover:gap-3 transition-all"
-            >💰 Services & Rates</a
-          >
-          <a
-            href="#"
-            class="flex items-center gap-2 text-sm text-[#E8302A] hover:gap-3 transition-all"
-            >❓ Frequently Asked Questions</a
-          >
+      <div class="grid md:grid-cols-2 gap-6">
+        <div
+          *ngFor="let faq of faqs"
+          class="bg-[#151515] border border-white/5 rounded-xl p-6 hover:border-[#E54D2E]/30 transition-all"
+        >
+          <h4 class="text-white font-medium mb-2 flex items-center gap-2">
+            <span class="text-[#E54D2E] text-lg">?</span>
+            {{ faq.question }}
+          </h4>
+          <p class="text-white/40 text-sm leading-relaxed">{{ faq.answer }}</p>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Location Card -->
-  <div class="mt-8 max-w-md mx-auto text-center">
-    <div class="bg-[#1E1E27] border border-white/10 rounded-xl p-6">
-      <div class="text-3xl mb-3">📍</div>
-      <h3 class="font-['Clash_Display'] text-lg font-bold text-white mb-1">
-        Pampanga, Philippines
-      </h3>
-      <p class="text-sm text-gray-400 mb-4">Available for remote work worldwide</p>
-      <a
-        href="https://maps.google.com/?q=Pampanga,Philippines"
-        target="_blank"
-        class="inline-flex items-center gap-2 bg-transparent text-white text-sm px-5 py-2 rounded-lg border border-white/10 hover:border-[#E8302A] hover:text-[#E8302A] transition-all"
-      >
-        🗺 Get Directions
-      </a>
-    </div>
-  </div>
-</div>
+</main>
