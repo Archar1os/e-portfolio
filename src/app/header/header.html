@@ -2,17 +2,14 @@
   <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 md:h-20">
       <!-- Logo/Brand -->
-      <a class="flex items-center gap-2 hover:opacity-80 transition-opacity" href="/">
-        <div
-          class="overflow-hidden rounded-full h-10 w-10 flex items-center justify-center bg-gray-900"
-        >
-          <img
-            src="justlogo.png"
-            alt="ARCHARIOS Logo"
-            class="h-8 w-8 rounded-full scale-175 object-cover"
-          />
+      <a class="flex items-center gap-2 hover:opacity-80 transition-opacity" routerLink="/">
+        <div class="overflow-hidden rounded-full h-10 w-10 flex items-center justify-center">
+          <img src="justlogo.png" alt="ARCHARIOS Logo" class="h-8 w-8 rounded-full scale-175" />
         </div>
-        <h1 class="text-lg md:text-xl font-bold">ARCH<span class="text-red-500">ARIOS</span></h1>
+
+        <h1 class="text-lg md:text-xl font-bold">
+          ARCH<span class="text-red-500 animate-pulse">ARIOS</span>
+        </h1>
       </a>
 
       <!-- Desktop Navigation -->
@@ -20,35 +17,35 @@
         <li class="px-2 lg:px-3 py-2" routerLinkActive="border-b-2 border-red-500">
           <a
             class="text-sm lg:text-base text-gray-300 hover:text-white transition-colors"
-            href="/home"
+            routerLink="/home"
             >Home</a
           >
         </li>
         <li class="px-2 lg:px-3 py-2" routerLinkActive="border-b-2 border-red-500">
           <a
             class="text-sm lg:text-base text-gray-300 hover:text-white transition-colors"
-            href="/about"
+            routerLink="/about"
             >About</a
           >
         </li>
         <li class="px-2 lg:px-3 py-2" routerLinkActive="border-b-2 border-red-500">
           <a
             class="text-sm lg:text-base text-gray-300 hover:text-white transition-colors"
-            href="/projects"
+            routerLink="/projects"
             >Projects</a
           >
         </li>
         <li class="px-2 lg:px-3 py-2" routerLinkActive="border-b-2 border-red-500">
           <a
             class="text-sm lg:text-base text-gray-300 hover:text-white transition-colors"
-            href="/resume"
+            routerLink="/resume"
             >Resume</a
           >
         </li>
         <li class="px-2 lg:px-3 py-2" routerLinkActive="border-b-2 border-red-500">
           <a
             class="text-sm lg:text-base text-gray-300 hover:text-white transition-colors"
-            href="/contact"
+            routerLink="/contact"
             >Contact</a
           >
         </li>
@@ -91,43 +88,43 @@
           <ul class="flex flex-col space-y-2">
             <li>
               <a
-                class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors mobile-link"
-                href="/home"
+                class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+                routerLink="/home"
                 >Home</a
               >
             </li>
             <li>
               <a
-                class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors mobile-link"
-                href="/about"
+                class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+                routerLink="/about"
                 >About</a
               >
             </li>
             <li>
               <a
-                class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors mobile-link"
-                href="/projects"
+                class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+                routerLink="/projects"
                 >Projects</a
               >
             </li>
             <li>
               <a
-                class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors mobile-link"
-                href="/resume"
+                class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+                routerLink="/resume"
                 >Resume</a
               >
             </li>
             <li>
               <a
-                class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors mobile-link"
-                href="/contact"
+                class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+                routerLink="/contact"
                 >Contact</a
               >
             </li>
             <li class="pt-2">
               <a
                 href="/resume"
-                class="block w-full text-center bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-full transition-colors mobile-link"
+                class="block w-full text-center bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-full transition-colors"
                 >RESUME</a
               >
             </li>
@@ -137,55 +134,3 @@
     </div>
   </nav>
 </header>
-
-<!-- Simple script that works on both desktop and mobile -->
-<script>
-  // This runs when the page loads
-  document.addEventListener('DOMContentLoaded', function () {
-    // Handle ALL navigation links (both desktop and mobile)
-    const allLinks = document.querySelectorAll('a[href^="/"], a[href="/resume"]');
-
-    allLinks.forEach((link) => {
-      link.addEventListener('click', function (e) {
-        // Don't prevent default - we want the navigation to happen
-
-        // Scroll to top
-        window.scrollTo(0, 0);
-
-        // Uncheck the mobile menu checkbox if it exists
-        const menuToggle = document.getElementById('menu-toggle');
-        if (menuToggle) {
-          menuToggle.checked = false;
-        }
-
-        // For mobile links, we also want to ensure the menu hides
-        // The checkbox uncheck above handles this
-      });
-    });
-
-    // Special handling for mobile links to ensure menu closes
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-    mobileLinks.forEach((link) => {
-      link.addEventListener('click', function (e) {
-        // Scroll to top
-        window.scrollTo(0, 0);
-
-        // Uncheck the mobile menu checkbox
-        const menuToggle = document.getElementById('menu-toggle');
-        if (menuToggle) {
-          menuToggle.checked = false;
-        }
-      });
-    });
-  });
-
-  // Force scroll to top on every page load
-  window.onload = function () {
-    window.scrollTo(0, 0);
-  };
-
-  // Also handle when user clicks back button
-  window.addEventListener('pageshow', function () {
-    window.scrollTo(0, 0);
-  });
-</script>
