@@ -1,394 +1,810 @@
-<!-- ===============================================
-     ARCHARIOS - RESUME PAGE
-     Minimalist | Timeline | Professional
-     =============================================== -->
-
-<!-- Floating Background Elements -->
-<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-  <div
-    class="absolute w-[400px] h-[400px] top-[10%] -left-[100px] rounded-full bg-[#E54D2E]/5 blur-[80px] animate-pulse"
-  ></div>
-  <div
-    class="absolute w-[300px] h-[300px] bottom-[20%] -right-[50px] rounded-full bg-[#E54D2E]/3 blur-[80px] animate-pulse delay-1000"
-  ></div>
-</div>
-
-<main class="relative z-10 bg-[#0A0A0A] min-h-screen text-white pt-32 pb-20">
-  <!-- ===============================================
-       HEADER SECTION
-       =============================================== -->
-  <div class="container mx-auto px-6 lg:px-12 max-w-6xl mb-16">
-    <!-- Breadcrumb -->
-    <div class="flex items-center gap-3 text-white/30 text-sm mb-8 font-mono">
-      <a (click)="navigateTo('home')" class="hover:text-[#E54D2E] transition-colors cursor-pointer"
-        >Home</a
-      >
-      <span>/</span>
-      <span class="text-[#E54D2E]">Resume</span>
-    </div>
-
-    <!-- Header Content -->
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-      <div>
-        <div class="flex items-center gap-4 mb-4">
-          <div class="w-12 h-px bg-[#E54D2E]"></div>
-          <span class="text-[#E54D2E] text-sm tracking-[0.3em] uppercase font-light"
-            >Curriculum Vitae</span
-          >
-        </div>
-        <h1 class="text-5xl lg:text-6xl font-light text-white">
-          Professional
-          <span
-            class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E54D2E] to-[#FF8A5C]"
-            >Resume</span
-          >
-        </h1>
-      </div>
+<!-- Resume Page Content (place between your header and footer) -->
+<main class="bg-gradient-to-b from-black to-gray-900 min-h-screen py-12 md:py-16 lg:py-20">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <!-- Page Header -->
+    <div class="text-center mb-12 md:mb-16">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+        My <span class="text-red-500">Resume</span>
+      </h1>
+      <div class="w-24 h-1 bg-red-500 mx-auto mb-6"></div>
+      <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
+        Full Stack Developer specializing in MEAN/MEVN stack | Download my professional resume
+        below.
+      </p>
 
       <!-- Download Button -->
-      <div class="flex gap-3">
-        <button
-          (click)="downloadPDF()"
-          class="group flex items-center gap-3 px-6 py-3 bg-[#E54D2E] text-white text-sm font-medium hover:bg-[#FF6B4A] transition-all hover:-translate-y-1 hover:shadow-lg"
+      <div class="mt-6">
+        <a
+          href="Smith_Dainielle_Romero_Resume.docx"
+          download="Smith_Dainielle_Romero_Resume.docx"
+          class="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-lg shadow-red-600/25 group"
         >
-          <span>Download PDF</span>
-          <span class="text-lg group-hover:translate-y-0.5 transition-transform">↓</span>
-        </button>
-        <button
-          (click)="printResume()"
-          class="group flex items-center gap-3 px-6 py-3 border border-white/10 text-white/70 text-sm font-medium hover:border-[#E54D2E]/30 hover:text-white transition-all"
-        >
-          <span>Print</span>
-          <span class="text-lg">🖨️</span>
-        </button>
+          <svg
+            class="w-5 h-5 group-hover:translate-y-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+            ></path>
+          </svg>
+          Download Resume (DOCX)
+        </a>
       </div>
     </div>
-  </div>
 
-  <!-- ===============================================
-       MAIN CONTENT - 2 COLUMN LAYOUT
-       =============================================== -->
-  <div class="container mx-auto px-6 lg:px-12 max-w-6xl">
-    <div class="grid lg:grid-cols-3 gap-8">
-      <!-- ===============================================
-           LEFT COLUMN - PERSONAL INFO & SKILLS
-           =============================================== -->
-      <div class="lg:col-span-1 space-y-6">
-        <!-- Profile Card -->
-        <div
-          class="bg-[#151515] border border-white/5 rounded-2xl p-8 hover:border-[#E54D2E]/30 transition-all group"
-        >
-          <div class="relative w-24 h-24 mx-auto mb-4">
+    <!-- Resume Preview Card -->
+    <div
+      class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 lg:p-10 border border-gray-700 shadow-2xl"
+    >
+      <!-- Resume Header with Logo/Branding -->
+      <div class="border-b border-gray-700 pb-6 mb-6">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+          <div class="flex items-center gap-4">
+            <!-- Logo/Initials -->
             <div
-              class="absolute inset-0 bg-gradient-to-br from-[#E54D2E] to-[#FF8A5C] rounded-full opacity-20 group-hover:opacity-30 transition-opacity blur-md"
-            ></div>
-            <div class="absolute inset-0 flex items-center justify-center text-5xl">👨‍💻</div>
-          </div>
-
-          <h2 class="text-xl text-white font-medium text-center mb-1">Smith Dainielle L. Romero</h2>
-          <p class="text-[#E54D2E] text-sm text-center mb-4">Web Developer & UI/UX Designer</p>
-
-          <!-- Contact Info -->
-          <div class="space-y-3 pt-4 border-t border-white/5">
-            <div class="flex items-center gap-3 text-white/60 text-sm">
-              <span class="text-[#E54D2E] text-lg">📍</span>
-              <span>Pampanga, Philippines</span>
+              class="bg-red-600 rounded-full w-16 h-16 flex items-center justify-center overflow-hidden border-2 border-red-500"
+            >
+              <img src="justlogo.png" alt="ARCHARIOS Logo" class="h-8 w-8 rounded-full scale-250" />
             </div>
-            <div class="flex items-center gap-3 text-white/60 text-sm">
-              <span class="text-[#E54D2E] text-lg">✉️</span>
-              <a
-                href="mailto:smithdainromero@gmail.com"
-                class="hover:text-[#E54D2E] transition-colors"
-                >smithdainromero&#64;gmail.com</a
+            <div>
+              <h2 class="text-2xl md:text-3xl font-bold text-white">SMITH DAINIELLE L. ROMERO</h2>
+              <p class="text-red-500 font-semibold text-lg">
+                Full Stack Developer | Flutter & MEVN Specialist
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="flex flex-wrap gap-4 mt-4 text-sm text-gray-400">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              ></path>
+            </svg>
+            smithdainromero@gmail.com
+          </span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              ></path>
+            </svg>
+            Blk 30 Lot 9 Gold Street, Sapang Biabas, Mabacalat City, Pampanga
+          </span>
+        </div>
+        <div class="flex gap-4 mt-2 text-sm">
+          <a
+            href="https://www.linkedin.com/in/smith-dainielle-romero-03242a328/"
+            target="_blank"
+            class="text-red-500 hover:text-red-400 flex items-center gap-1"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              ></path>
+            </svg>
+            linkedin.com/in/smith-dainielle-romero
+          </a>
+          <a
+            href="https://github.com/Archar1os"
+            target="_blank"
+            class="text-red-500 hover:text-red-400 flex items-center gap-1"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              ></path>
+            </svg>
+            github.com/Archar1os
+          </a>
+        </div>
+      </div>
+
+      <!-- Career Objective -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+          <span class="w-1 h-6 bg-red-500 rounded-full"></span>
+          CAREER OBJECTIVE
+        </h3>
+        <div class="bg-gray-900/50 rounded-xl p-5 border-l-4 border-red-500">
+          <p class="text-gray-300 leading-relaxed">
+            Highly motivated Full Stack Developer specializing in MEAN and MEVN stacks, seeking an
+            OJT position to apply my technical expertise in both frontend and backend development.
+            Experienced in building complete web applications from database design to responsive
+            user interfaces. Eager to contribute to innovative projects while expanding my knowledge
+            of enterprise-level systems in a professional development environment.
+          </p>
+        </div>
+      </div>
+
+      <!-- Technical Skills -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+          <span class="w-1 h-6 bg-red-500 rounded-full"></span>
+          TECHNICAL SKILLS
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Frontend Stack -->
+          <div class="bg-gray-900/30 rounded-xl p-5">
+            <h4 class="text-red-500 font-semibold mb-3 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+              Frontend Development
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >HTML5 & CSS3</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >JavaScript</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >Angular</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >Vue.js</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >Tailwind CSS</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >Flutter</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >Responsive Design</span
               >
             </div>
-            <div class="flex items-center gap-3 text-white/60 text-sm">
-              <span class="text-[#E54D2E] text-lg">📞</span>
-              <span>+63 960 562 0450</span>
+          </div>
+
+          <!-- Backend Stack -->
+          <div class="bg-gray-900/30 rounded-xl p-5">
+            <h4 class="text-red-500 font-semibold mb-3 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                ></path>
+              </svg>
+              Backend Development
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >Node.js</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >Express.js</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >Java</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >Python</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >RESTful APIs</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >JWT Auth</span
+              >
             </div>
           </div>
 
-          <!-- Social Links -->
-          <div class="flex justify-center gap-3 mt-6">
-            <a
-              href="https://github.com/archar1os"
-              target="_blank"
-              class="w-8 h-8 rounded-full bg-white/5 hover:bg-[#E54D2E] flex items-center justify-center transition-colors"
-            >
-              <span class="text-white/60 hover:text-white text-xs">GH</span>
-            </a>
-            <a
-              href="https://linkedin.com/in/smith-dainielle-romero-03242a328/"
-              target="_blank"
-              class="w-8 h-8 rounded-full bg-white/5 hover:bg-[#E54D2E] flex items-center justify-center transition-colors"
-            >
-              <span class="text-white/60 hover:text-white text-xs">IN</span>
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              class="w-8 h-8 rounded-full bg-white/5 hover:bg-[#E54D2E] flex items-center justify-center transition-colors"
-            >
-              <span class="text-white/60 hover:text-white text-xs">X</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Technical Skills -->
-        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
-          <h3 class="text-white font-medium mb-6 flex items-center gap-2">
-            <span class="w-1 h-4 bg-[#E54D2E]"></span>
-            Technical Skills
-          </h3>
-
-          <div class="space-y-6">
-            <!-- Frontend -->
-            <div>
-              <div class="flex justify-between text-sm mb-3">
-                <span class="text-white/70">Frontend</span>
-                <span class="text-[#E54D2E]">90%</span>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  *ngFor="let skill of frontendSkills"
-                  class="px-3 py-1.5 bg-[#0A0A0A] border border-white/5 rounded-lg text-white/70 text-xs hover:border-[#E54D2E]/30 hover:text-[#E54D2E] transition-all"
-                >
-                  {{ skill }}
-                </span>
-              </div>
-            </div>
-
-            <!-- Backend -->
-            <div>
-              <div class="flex justify-between text-sm mb-3">
-                <span class="text-white/70">Backend</span>
-                <span class="text-[#E54D2E]">85%</span>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  *ngFor="let skill of backendSkills"
-                  class="px-3 py-1.5 bg-[#0A0A0A] border border-white/5 rounded-lg text-white/70 text-xs hover:border-[#E54D2E]/30 hover:text-[#E54D2E] transition-all"
-                >
-                  {{ skill }}
-                </span>
-              </div>
-            </div>
-
-            <!-- Design -->
-            <div>
-              <div class="flex justify-between text-sm mb-3">
-                <span class="text-white/70">Design</span>
-                <span class="text-[#E54D2E]">88%</span>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  *ngFor="let skill of designSkills"
-                  class="px-3 py-1.5 bg-[#0A0A0A] border border-white/5 rounded-lg text-white/70 text-xs hover:border-[#E54D2E]/30 hover:text-[#E54D2E] transition-all"
-                >
-                  {{ skill }}
-                </span>
-              </div>
-            </div>
-
-            <!-- Tools -->
-            <div>
-              <div class="flex justify-between text-sm mb-3">
-                <span class="text-white/70">Tools</span>
-                <span class="text-[#E54D2E]">92%</span>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  *ngFor="let tool of tools"
-                  class="px-3 py-1.5 bg-[#0A0A0A] border border-white/5 rounded-lg text-white/70 text-xs hover:border-[#E54D2E]/30 hover:text-[#E54D2E] transition-all"
-                >
-                  {{ tool }}
-                </span>
-              </div>
+          <!-- Database -->
+          <div class="bg-gray-900/30 rounded-xl p-5">
+            <h4 class="text-red-500 font-semibold mb-3 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"
+                ></path>
+              </svg>
+              Database Management
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >MongoDB</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >MySQL</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >Database Design</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >Query Optimization</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >Mongoose</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >File I/O (.txt)</span
+              >
             </div>
           </div>
-        </div>
 
-        <!-- Languages -->
-        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
-          <h3 class="text-white font-medium mb-6 flex items-center gap-2">
-            <span class="w-1 h-4 bg-[#E54D2E]"></span>
-            Languages
-          </h3>
-
-          <div class="space-y-4">
-            <div *ngFor="let lang of languages" class="space-y-2">
-              <div class="flex justify-between text-sm">
-                <span class="text-white/70">{{ lang.name }}</span>
-                <span class="text-[#E54D2E]">{{ lang.level }}</span>
-              </div>
-              <div class="h-1 bg-white/5 rounded-full overflow-hidden">
-                <div
-                  class="h-full bg-gradient-to-r from-[#E54D2E] to-[#FF8A5C] rounded-full"
-                  [style.width.%]="lang.percentage"
-                ></div>
-              </div>
+          <!-- Full Stack Stacks -->
+          <div class="bg-gray-900/30 rounded-xl p-5">
+            <h4 class="text-red-500 font-semibold mb-3 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-6-4h.01v.01H12V8z"
+                ></path>
+              </svg>
+              Full Stack Stacks
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >MEAN Stack</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >MEVN Stack</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >MERN (Learning)</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >LAMP (PHP)</span
+              >
             </div>
           </div>
-        </div>
 
-        <!-- Soft Skills -->
-        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
-          <h3 class="text-white font-medium mb-4 flex items-center gap-2">
-            <span class="w-1 h-4 bg-[#E54D2E]"></span>
-            Soft Skills
-          </h3>
-
-          <div class="flex flex-wrap gap-2">
-            <span
-              *ngFor="let skill of softSkills"
-              class="px-3 py-1.5 bg-[#0A0A0A] border border-white/5 rounded-full text-white/60 text-xs hover:border-[#E54D2E]/30 hover:text-white transition-all"
-            >
-              {{ skill }}
-            </span>
+          <!-- Tools & Platforms -->
+          <div class="bg-gray-900/30 rounded-xl p-5 md:col-span-2">
+            <h4 class="text-red-500 font-semibold mb-3 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+              Tools & Platforms
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >Git</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >GitHub</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >NPM</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >Postman</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >VS Code</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >Version Control</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >Agile/Scrum</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
+                >GitHub Pages</span
+              >
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- ===============================================
-           RIGHT COLUMN - EXPERIENCE & EDUCATION
-           =============================================== -->
-      <div class="lg:col-span-2 space-y-6">
-        <!-- Professional Summary -->
-        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
-          <h3 class="text-white font-medium mb-4 flex items-center gap-2">
-            <span class="w-1 h-4 bg-[#E54D2E]"></span>
-            Professional Summary
-          </h3>
-          <p class="text-white/60 leading-relaxed">
-            Passionate web developer with 3+ years of experience creating modern, responsive
-            websites and applications. Skilled in front-end technologies (React, Angular,
-            TypeScript) and back-end development (Node.js, Express). Strong background in UI/UX
-            design principles and project management. Seeking opportunities to contribute to
-            innovative projects and grow as a full-stack developer.
+      <!-- Education -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+          <span class="w-1 h-6 bg-red-500 rounded-full"></span>
+          EDUCATION
+        </h3>
+        <div class="bg-gray-900/30 rounded-xl p-5">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
+            <h4 class="text-white font-bold text-lg">
+              Bachelor of Science in Information Technology
+            </h4>
+            <span class="text-red-500 text-sm font-semibold">Expected Graduation: 2027</span>
+          </div>
+          <p class="text-gray-400 mb-3">Holy Angel University - Angeles City, Pampanga</p>
+          <div
+            class="inline-block bg-red-600/20 text-red-500 px-3 py-1 rounded-full text-xs font-semibold mb-4"
+          >
+            Dean's Lister
+          </div>
+
+          <h5 class="text-white font-semibold mb-2">Relevant Coursework:</h5>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+            <span class="text-gray-400 text-sm">• Web Development (Advanced)</span>
+            <span class="text-gray-400 text-sm">• Full Stack Development</span>
+            <span class="text-gray-400 text-sm">• Database Management Systems</span>
+            <span class="text-gray-400 text-sm">• Data Structures and Algorithms</span>
+            <span class="text-gray-400 text-sm">• Backend Development & API Design</span>
+            <span class="text-gray-400 text-sm">• Frontend Frameworks</span>
+            <span class="text-gray-400 text-sm">• Software Engineering Principles</span>
+            <span class="text-gray-400 text-sm">• Mobile Development (Flutter)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PERSONAL PROJECTS (Replaced school projects with your actual projects) -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+          <span class="w-1 h-6 bg-red-500 rounded-full"></span>
+          PERSONAL PROJECTS
+        </h3>
+
+        <!-- Project 1: Tambayan App (Flutter) -->
+        <div class="bg-gray-900/30 rounded-xl p-5 mb-4">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
+            <h4 class="text-white font-semibold">Tambayan App - Study Spot Finder</h4>
+            <span class="text-red-500 text-sm">Flutter Mobile App</span>
+          </div>
+          <a
+            href="https://github.com/Archar1os/flutter_application_1"
+            target="_blank"
+            class="text-red-500 hover:text-red-400 text-sm flex items-center gap-1 mb-3"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              ></path>
+            </svg>
+            github.com/Archar1os/flutter_application_1
+          </a>
+          <p class="text-gray-400 text-sm mb-2">
+            A mobile application for Holy Angel University students to discover study spots and
+            hangout places near campus.
           </p>
+          <ul class="space-y-1 text-gray-300 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-1">•</span>
+              <span>3-screen architecture with Home, Details, and Favorites using Flutter</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-1">•</span>
+              <span>Implemented navigation with data passing using async/await pattern</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-1">•</span>
+              <span>Card-based UI with amenity indicators (WiFi, power outlets, price)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-1">•</span>
+              <span>Technologies: Flutter, Dart, Material UI, Navigation, State Management</span>
+            </li>
+          </ul>
         </div>
 
-        <!-- Work Experience -->
-        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
-          <h3 class="text-white font-medium mb-8 flex items-center gap-2">
-            <span class="w-1 h-4 bg-[#E54D2E]"></span>
-            Work Experience
-          </h3>
-
-          <div class="space-y-8">
-            <div
-              *ngFor="let job of workExperience; let i = index"
-              class="relative pl-8 pb-8 border-l border-white/5 last:border-0 last:pb-0 group hover:border-[#E54D2E]/30 transition-colors"
+        <!-- Project 2: Barrios Restaurant / Geytway Unli Buffet -->
+        <div class="bg-gray-900/30 rounded-xl p-5 mb-4">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
+            <h4 class="text-white font-semibold">Barrios Restaurant / Geytway Unli Buffet</h4>
+            <span class="text-red-500 text-sm">Restaurant Website</span>
+          </div>
+          <div class="flex flex-wrap gap-3 mb-2">
+            <a
+              href="https://github.com/Archar1os/Barrios-Restuarant"
+              target="_blank"
+              class="text-red-500 hover:text-red-400 text-sm flex items-center gap-1"
             >
-              <!-- Timeline Dot -->
-              <div
-                class="absolute -left-1.5 top-0 w-3 h-3 rounded-full bg-[#E54D2E] opacity-50 group-hover:opacity-100 transition-opacity"
-              ></div>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                ></path>
+              </svg>
+              Source Code
+            </a>
+            <a
+              href="https://archar1os.github.io/Barrios-Restuarant/"
+              target="_blank"
+              class="text-red-500 hover:text-red-400 text-sm flex items-center gap-1"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                ></path>
+              </svg>
+              Live Demo
+            </a>
+          </div>
+          <p class="text-gray-400 text-sm mb-2">
+            A website concept for an Unli Buffet restaurant in Camachiles Phase 2 (now Geytway Unli
+            Buffet).
+          </p>
+          <ul class="space-y-1 text-gray-300 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-1">•</span>
+              <span>Designed and developed complete website from concept to deployment</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-1">•</span>
+              <span>Technologies: HTML5, CSS3, JavaScript, Responsive Design</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-1">•</span>
+              <span
+                >Live demo:
+                <span class="text-red-500"
+                  >https://archar1os.github.io/Barrios-Restuarant/</span
+                ></span
+              >
+            </li>
+          </ul>
+        </div>
 
-              <!-- Date -->
-              <span class="text-[#E54D2E] text-sm font-mono block mb-2">{{ job.date }}</span>
+        <!-- Project 3: Cascade Coffee Shop (Anime Styled) -->
+        <div class="bg-gray-900/30 rounded-xl p-5 mb-4">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
+            <h4 class="text-white font-semibold">Cascade Coffee Shop (Anime Styled)</h4>
+            <span class="text-red-500 text-sm">PHP Website Concept</span>
+          </div>
+          <a
+            href="https://github.com/Archar1os/Cascade_Official"
+            target="_blank"
+            class="text-red-500 hover:text-red-400 text-sm flex items-center gap-1 mb-3"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              ></path>
+            </svg>
+            github.com/Archar1os/Cascade_Official
+          </a>
+          <p class="text-gray-400 text-sm mb-2">
+            An anime-themed coffee shop website concept - a mockup/design project for a fictional
+            anime-inspired café.
+          </p>
+          <ul class="space-y-1 text-gray-300 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-1">•</span>
+              <span>Full stack concept with PHP backend and frontend design elements</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-1">•</span>
+              <span>Technologies: PHP, HTML5, CSS3, JavaScript, Anime UI/UX</span>
+            </li>
+          </ul>
+        </div>
 
-              <!-- Title & Company -->
-              <h4 class="text-white text-lg font-medium mb-1">{{ job.title }}</h4>
-              <p class="text-white/40 text-sm mb-3">{{ job.company }} · {{ job.location }}</p>
+        <!-- Project 4: GPC Shop Webpage -->
+        <div class="bg-gray-900/30 rounded-xl p-5 mb-4">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
+            <h4 class="text-white font-semibold">GPC Shop Webpage</h4>
+            <span class="text-red-500 text-sm">Deal Aggregator</span>
+          </div>
+          <div class="flex flex-wrap gap-3 mb-2">
+            <a
+              href="https://github.com/Archar1os/GPC-shop-webpage"
+              target="_blank"
+              class="text-red-500 hover:text-red-400 text-sm flex items-center gap-1"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                ></path>
+              </svg>
+              Source Code
+            </a>
+            <a
+              href="https://archar1os.github.io/GPC-shop-webpage/"
+              target="_blank"
+              class="text-red-500 hover:text-red-400 text-sm flex items-center gap-1"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                ></path>
+              </svg>
+              Live Demo
+            </a>
+          </div>
+          <p class="text-gray-400 text-sm mb-2">
+            A deal suggestion website that helps users find the best product deals and redirects to
+            Shopee and other stores.
+          </p>
+          <ul class="space-y-1 text-gray-300 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-1">•</span>
+              <span>Deal aggregator that suggests "steal" prices from e-commerce platforms</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-1">•</span>
+              <span>Technologies: HTML5, CSS3, JavaScript, Deal Aggregation</span>
+            </li>
+          </ul>
+        </div>
 
-              <!-- Description -->
-              <p class="text-white/60 text-sm leading-relaxed">{{ job.description }}</p>
+        <!-- Project 5: Library Management System (Java) -->
+        <div class="bg-gray-900/30 rounded-xl p-5 mb-4">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
+            <h4 class="text-white font-semibold">Library Management System</h4>
+            <span class="text-red-500 text-sm">Java Console Application</span>
+          </div>
+          <a
+            href="https://github.com/Archar1os/Library-Management-System"
+            target="_blank"
+            class="text-red-500 hover:text-red-400 text-sm flex items-center gap-1 mb-3"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              ></path>
+            </svg>
+            github.com/Archar1os/Library-Management-System
+          </a>
+          <p class="text-gray-400 text-sm mb-2">
+            A Java-based library management application with .txt file database system.
+          </p>
+          <ul class="space-y-1 text-gray-300 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-1">•</span>
+              <span>Handles book inventory, borrowing, returns, and member management</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-1">•</span>
+              <span>Technologies: Java, File I/O, .txt Database, OOP, CRUD operations</span>
+            </li>
+          </ul>
+        </div>
 
-              <!-- Achievements -->
-              <div class="mt-3 flex flex-wrap gap-2">
-                <span *ngFor="let achievement of job.achievements" class="text-xs text-white/40"
-                  >• {{ achievement }}</span
-                >
-              </div>
-            </div>
+        <!-- Project 6: UserApi (JavaScript/API Project) -->
+        <div class="bg-gray-900/30 rounded-xl p-5">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
+            <h4 class="text-white font-semibold">UserApi - RESTful API Service</h4>
+            <span class="text-red-500 text-sm">Node.js/Express API</span>
+          </div>
+          <a
+            href="https://github.com/Archar1os/UserApi"
+            target="_blank"
+            class="text-red-500 hover:text-red-400 text-sm flex items-center gap-1 mb-3"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              ></path>
+            </svg>
+            github.com/Archar1os/UserApi
+          </a>
+          <p class="text-gray-400 text-sm mb-2">
+            A RESTful API service for user management with authentication.
+          </p>
+          <ul class="space-y-1 text-gray-300 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-1">•</span>
+              <span>User registration, login authentication, and profile management endpoints</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-1">•</span>
+              <span>Technologies: Node.js, Express, REST API, JavaScript, JWT Authentication</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-1">•</span>
+              <span>Extended from FreeCodeCamp boilerplate with additional features</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Achievements & Recognition -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+          <span class="w-1 h-6 bg-red-500 rounded-full"></span>
+          ACHIEVEMENTS & RECOGNITION
+        </h3>
+        <div class="bg-gray-900/30 rounded-xl p-5">
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="text-red-500 text-xl">🏆</span>
+              <span class="text-gray-300"
+                ><span class="text-white font-semibold">Dean's Lister</span> - Holy Angel University
+                (Academic Excellence Award)</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-500 text-xl">✅</span>
+              <span class="text-gray-300"
+                >Successfully completed 6+ personal projects across web and mobile platforms</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-500 text-xl">🔧</span>
+              <span class="text-gray-300"
+                >Proficient in version control and collaborative development using Git and GitHub
+                with 15+ repositories</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-500 text-xl">📊</span>
+              <span class="text-gray-300"
+                >Strong foundation in both SQL and NoSQL database design, optimization, and backend
+                architecture</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-500 text-xl">⚛️</span>
+              <span class="text-gray-300"
+                >Experienced in multiple frontend frameworks including Angular, Vue.js, and
+                Flutter</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Areas of Specialization -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+          <span class="w-1 h-6 bg-red-500 rounded-full"></span>
+          AREAS OF SPECIALIZATION
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-gray-900/30 rounded-xl p-5 border-l-4 border-red-500">
+            <h4 class="text-white font-semibold mb-3 flex items-center gap-2">
+              <span class="text-2xl">⚛️</span>
+              Frontend Development
+            </h4>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Building responsive, interactive user interfaces with Angular, Vue.js, and Flutter.
+              Focused on component-based architecture and optimal user experience.
+            </p>
+          </div>
+          <div class="bg-gray-900/30 rounded-xl p-5 border-l-4 border-red-500">
+            <h4 class="text-white font-semibold mb-3 flex items-center gap-2">
+              <span class="text-2xl">⚙️</span>
+              Backend Development
+            </h4>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Proficient in building robust server-side applications, RESTful APIs with
+              Node.js/Express, and server logic. Strong understanding of authentication and data
+              processing.
+            </p>
+          </div>
+          <div class="bg-gray-900/30 rounded-xl p-5 border-l-4 border-red-500">
+            <h4 class="text-white font-semibold mb-3 flex items-center gap-2">
+              <span class="text-2xl">🗄️</span>
+              Full Stack Integration
+            </h4>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Expertise in MEAN and MEVN stacks, connecting frontend applications with backend
+              services, database design, and ensuring seamless data flow across the entire
+              application.
+            </p>
           </div>
         </div>
+      </div>
 
-        <!-- Education -->
-        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
-          <h3 class="text-white font-medium mb-8 flex items-center gap-2">
-            <span class="w-1 h-4 bg-[#E54D2E]"></span>
-            Education
-          </h3>
-
-          <div class="space-y-8">
-            <div
-              *ngFor="let edu of education; let i = index"
-              class="relative pl-8 pb-8 border-l border-white/5 last:border-0 last:pb-0 group hover:border-[#E54D2E]/30 transition-colors"
-            >
-              <!-- Timeline Dot -->
-              <div
-                class="absolute -left-1.5 top-0 w-3 h-3 rounded-full bg-[#E54D2E] opacity-50 group-hover:opacity-100 transition-opacity"
-              ></div>
-
-              <!-- Date -->
-              <span class="text-[#E54D2E] text-sm font-mono block mb-2">{{ edu.date }}</span>
-
-              <!-- Degree -->
-              <h4 class="text-white text-lg font-medium mb-1">{{ edu.degree }}</h4>
-              <p class="text-white/40 text-sm mb-3">{{ edu.school }} · {{ edu.location }}</p>
-
-              <!-- Details -->
-              <p class="text-white/60 text-sm leading-relaxed">{{ edu.details }}</p>
-
-              <!-- GPA / Honors -->
-              <div class="mt-3 flex flex-wrap gap-4">
-                <span class="text-xs text-white/40">GPA: {{ edu.gpa }}</span>
-                <span class="text-xs text-white/40">•</span>
-                <span class="text-xs text-white/40">{{ edu.honors }}</span>
-              </div>
-            </div>
-          </div>
+      <!-- Professional Competencies -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+          <span class="w-1 h-6 bg-red-500 rounded-full"></span>
+          PROFESSIONAL COMPETENCIES
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <span
+            class="bg-gray-800/50 text-gray-300 px-4 py-2 rounded-lg text-sm text-center border border-gray-700"
+            >Problem Solving</span
+          >
+          <span
+            class="bg-gray-800/50 text-gray-300 px-4 py-2 rounded-lg text-sm text-center border border-gray-700"
+            >Attention to Detail</span
+          >
+          <span
+            class="bg-gray-800/50 text-gray-300 px-4 py-2 rounded-lg text-sm text-center border border-gray-700"
+            >Time Management</span
+          >
+          <span
+            class="bg-gray-800/50 text-gray-300 px-4 py-2 rounded-lg text-sm text-center border border-gray-700"
+            >Team Collaboration</span
+          >
+          <span
+            class="bg-gray-800/50 text-gray-300 px-4 py-2 rounded-lg text-sm text-center border border-gray-700"
+            >Self-Motivated</span
+          >
+          <span
+            class="bg-gray-800/50 text-gray-300 px-4 py-2 rounded-lg text-sm text-center border border-gray-700"
+            >Fast Learner</span
+          >
+          <span
+            class="bg-gray-800/50 text-gray-300 px-4 py-2 rounded-lg text-sm text-center border border-gray-700"
+            >Critical Thinking</span
+          >
+          <span
+            class="bg-gray-800/50 text-gray-300 px-4 py-2 rounded-lg text-sm text-center border border-gray-700"
+            >Adaptability</span
+          >
+          <span
+            class="bg-gray-800/50 text-gray-300 px-4 py-2 rounded-lg text-sm text-center border border-gray-700"
+            >Analytical Skills</span
+          >
         </div>
+      </div>
 
-        <!-- Certifications -->
-        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
-          <h3 class="text-white font-medium mb-6 flex items-center gap-2">
-            <span class="w-1 h-4 bg-[#E54D2E]"></span>
-            Certifications
-          </h3>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div
-              *ngFor="let cert of certifications"
-              class="group p-4 bg-[#0A0A0A] border border-white/5 rounded-xl hover:border-[#E54D2E]/30 transition-all hover:-translate-y-1"
-            >
-              <div class="flex items-start gap-3">
-                <span class="text-[#E54D2E] text-lg">📜</span>
-                <div>
-                  <h4 class="text-white text-sm font-medium mb-1">{{ cert.name }}</h4>
-                  <p class="text-white/40 text-xs mb-2">{{ cert.issuer }} · {{ cert.year }}</p>
-                  <span
-                    class="text-[#E54D2E] text-xs opacity-0 group-hover:opacity-100 transition-opacity"
-                    >View →</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Awards -->
-        <div class="bg-[#151515] border border-white/5 rounded-2xl p-8">
-          <h3 class="text-white font-medium mb-6 flex items-center gap-2">
-            <span class="w-1 h-4 bg-[#E54D2E]"></span>
-            Awards & Recognition
-          </h3>
-
-          <div class="space-y-4">
-            <div
-              *ngFor="let award of awards"
-              class="flex items-start gap-4 p-4 bg-[#0A0A0A] border border-white/5 rounded-xl"
-            >
-              <span class="text-2xl">{{ award.icon }}</span>
-              <div>
-                <h4 class="text-white text-sm font-medium mb-1">{{ award.name }}</h4>
-                <p class="text-white/40 text-xs">{{ award.issuer }} · {{ award.year }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- References -->
+      <div class="text-center pt-4 border-t border-gray-700">
+        <p class="text-gray-400 italic">References available upon request</p>
+        <p class="text-gray-600 text-xs mt-2">Updated: March 2026</p>
       </div>
     </div>
   </div>

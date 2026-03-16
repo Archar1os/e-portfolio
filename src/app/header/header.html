@@ -1,86 +1,191 @@
-<header
-  class="fixed top-0 left-0 right-0 z-50 h-[70px] flex items-center justify-between px-4 md:px-12 bg-black/80 backdrop-blur-md border-b border-white/10"
->
-  <!-- Logo -->
-  <a routerLink="/" class="flex items-center gap-2 cursor-pointer group">
-    <div class="relative w-[42px] h-[42px]">
-      <div
-        class="absolute inset-0 rounded-full bg-gradient-to-br from-[#E8302A] to-transparent opacity-50 group-hover:opacity-70 transition-opacity"
-      ></div>
-      <div
-        class="absolute inset-0 rounded-full border-2 border-[#E8302A] group-hover:border-[#FF4D47] transition-colors"
-      ></div>
-      <div
-        class="absolute inset-0 flex items-center justify-center font-['Clash_Display'] font-bold text-white"
+<header class="w-full bg-black text-white sticky top-0 z-50 border-b border-gray-800">
+  <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo/Brand -->
+      <a class="flex items-center gap-2 hover:opacity-80 transition-opacity" href="/">
+        <div
+          class="overflow-hidden rounded-full h-10 w-10 flex items-center justify-center bg-gray-900"
+        >
+          <img
+            src="justlogo.png"
+            alt="ARCHARIOS Logo"
+            class="h-8 w-8 rounded-full scale-175 object-cover"
+          />
+        </div>
+        <h1 class="text-lg md:text-xl font-bold">ARCH<span class="text-red-500">ARIOS</span></h1>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <ul class="hidden md:flex items-center space-x-1 lg:space-x-2">
+        <li class="px-2 lg:px-3 py-2" routerLinkActive="border-b-2 border-red-500">
+          <a
+            class="text-sm lg:text-base text-gray-300 hover:text-white transition-colors"
+            href="/home"
+            >Home</a
+          >
+        </li>
+        <li class="px-2 lg:px-3 py-2" routerLinkActive="border-b-2 border-red-500">
+          <a
+            class="text-sm lg:text-base text-gray-300 hover:text-white transition-colors"
+            href="/about"
+            >About</a
+          >
+        </li>
+        <li class="px-2 lg:px-3 py-2" routerLinkActive="border-b-2 border-red-500">
+          <a
+            class="text-sm lg:text-base text-gray-300 hover:text-white transition-colors"
+            href="/projects"
+            >Projects</a
+          >
+        </li>
+        <li class="px-2 lg:px-3 py-2" routerLinkActive="border-b-2 border-red-500">
+          <a
+            class="text-sm lg:text-base text-gray-300 hover:text-white transition-colors"
+            href="/resume"
+            >Resume</a
+          >
+        </li>
+        <li class="px-2 lg:px-3 py-2" routerLinkActive="border-b-2 border-red-500">
+          <a
+            class="text-sm lg:text-base text-gray-300 hover:text-white transition-colors"
+            href="/contact"
+            >Contact</a
+          >
+        </li>
+      </ul>
+
+      <!-- Resume Button (Desktop) -->
+      <a
+        href="/resume"
+        class="hidden md:block bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 lg:px-6 rounded-full text-sm lg:text-base transition-all duration-300 shadow-lg shadow-red-600/25"
       >
-        <img src="logo.png" alt="Logo" class="w-10 h-10" />
+        RESUME
+      </a>
+
+      <!-- Mobile Menu Toggle (Checkbox Hack) -->
+      <div class="md:hidden">
+        <input type="checkbox" id="menu-toggle" class="hidden peer" />
+        <label for="menu-toggle" class="p-2 text-gray-400 hover:text-white cursor-pointer block">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+              class="peer-checked:hidden"
+            ></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+              class="hidden peer-checked:block"
+            ></path>
+          </svg>
+        </label>
+
+        <!-- Mobile Menu -->
+        <div
+          class="hidden peer-checked:block absolute left-0 right-0 top-16 bg-black border-t border-gray-800 px-4 py-4"
+        >
+          <ul class="flex flex-col space-y-2">
+            <li>
+              <a
+                class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors mobile-link"
+                href="/home"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors mobile-link"
+                href="/about"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors mobile-link"
+                href="/projects"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors mobile-link"
+                href="/resume"
+                >Resume</a
+              >
+            </li>
+            <li>
+              <a
+                class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors mobile-link"
+                href="/contact"
+                >Contact</a
+              >
+            </li>
+            <li class="pt-2">
+              <a
+                href="/resume"
+                class="block w-full text-center bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-full transition-colors mobile-link"
+                >RESUME</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <span class="font-['Clash_Display'] font-bold text-sm md:text-base tracking-wide">
-      <span class="text-white">ARCH</span>
-      <span class="text-[#E8302A]">ARIOS</span>
-    </span>
-  </a>
-
-  <!-- Desktop Navigation -->
-  <nav class="hidden md:block">
-    <ul class="flex items-center gap-2">
-      <li *ngFor="let item of navItems" class="relative">
-        <a
-          [routerLink]="item.route"
-          routerLinkActive="text-white"
-          [routerLinkActiveOptions]="{ exact: item.route === '/' }"
-          class="relative block px-4 py-2 font-medium text-sm text-gray-400 hover:text-white transition-colors duration-300"
-        >
-          {{ item.label }}
-          <!-- Animated border bottom -->
-          <span
-            class="absolute bottom-0 left-0 w-full h-0.5 bg-[#E8302A] transform scale-x-0 transition-transform duration-300 origin-left"
-            [class.scale-x-100]="isActive(item.route)"
-            routerLinkActive="scale-x-100"
-            [routerLinkActiveOptions]="{ exact: item.route === '/' }"
-          ></span>
-          <!-- Hover effect border -->
-          <span
-            class="absolute bottom-0 left-0 w-full h-0.5 bg-[#E8302A]/30 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-          ></span>
-        </a>
-      </li>
-    </ul>
   </nav>
-
-  <div class="p-20"></div>
 </header>
 
-<!-- Mobile Navigation Menu -->
-<div
-  class="md:hidden fixed top-[70px] left-0 right-0 z-40 bg-[#111116] border-b border-white/10 py-2 px-4 transition-all duration-300 overflow-hidden"
-  [class.h-0]="!mobileMenuOpen"
-  [class.py-0]="!mobileMenuOpen"
-  [class.opacity-0]="!mobileMenuOpen"
-  [class.pointer-events-none]="!mobileMenuOpen"
-  [class.py-2]="mobileMenuOpen"
-  [class.opacity-100]="mobileMenuOpen"
-  [class.pointer-events-auto]="mobileMenuOpen"
-  style="transition-property: height, padding, opacity"
->
-  <nav class="flex flex-col gap-1">
-    <a
-      *ngFor="let item of navItems"
-      [routerLink]="item.route"
-      routerLinkActive="text-white bg-[#E8302A]/10"
-      [routerLinkActiveOptions]="{ exact: item.route === '/' }"
-      (click)="closeMobileMenu()"
-      class="relative block px-4 py-3 font-medium text-sm text-gray-400 hover:text-white hover:bg-[#E8302A]/10 rounded-md transition-all duration-300"
-    >
-      {{ item.label }}
-      <!-- Active indicator for mobile -->
-      <span
-        class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-[#E8302A] rounded-r-md transform scale-y-0 transition-transform duration-300"
-        [class.scale-y-100]="isActive(item.route)"
-        routerLinkActive="scale-y-100"
-        [routerLinkActiveOptions]="{ exact: item.route === '/' }"
-      ></span>
-    </a>
-  </nav>
-</div>
+<!-- Simple script that works on both desktop and mobile -->
+<script>
+  // This runs when the page loads
+  document.addEventListener('DOMContentLoaded', function () {
+    // Handle ALL navigation links (both desktop and mobile)
+    const allLinks = document.querySelectorAll('a[href^="/"], a[href="/resume"]');
+
+    allLinks.forEach((link) => {
+      link.addEventListener('click', function (e) {
+        // Don't prevent default - we want the navigation to happen
+
+        // Scroll to top
+        window.scrollTo(0, 0);
+
+        // Uncheck the mobile menu checkbox if it exists
+        const menuToggle = document.getElementById('menu-toggle');
+        if (menuToggle) {
+          menuToggle.checked = false;
+        }
+
+        // For mobile links, we also want to ensure the menu hides
+        // The checkbox uncheck above handles this
+      });
+    });
+
+    // Special handling for mobile links to ensure menu closes
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    mobileLinks.forEach((link) => {
+      link.addEventListener('click', function (e) {
+        // Scroll to top
+        window.scrollTo(0, 0);
+
+        // Uncheck the mobile menu checkbox
+        const menuToggle = document.getElementById('menu-toggle');
+        if (menuToggle) {
+          menuToggle.checked = false;
+        }
+      });
+    });
+  });
+
+  // Force scroll to top on every page load
+  window.onload = function () {
+    window.scrollTo(0, 0);
+  };
+
+  // Also handle when user clicks back button
+  window.addEventListener('pageshow', function () {
+    window.scrollTo(0, 0);
+  });
+</script>
