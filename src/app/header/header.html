@@ -3,13 +3,16 @@
     <div class="flex items-center justify-between h-16 md:h-20">
       <!-- Logo/Brand -->
       <a class="flex items-center gap-2 hover:opacity-80 transition-opacity" routerLink="/">
-        <div class="overflow-hidden rounded-full h-10 w-10 flex items-center justify-center">
-          <img src="justlogo.png" alt="ARCHARIOS Logo" class="h-8 w-8 rounded-full scale-175" />
+        <div
+          class="overflow-hidden rounded-full h-10 w-10 flex items-center justify-center bg-gray-900"
+        >
+          <img
+            src="justlogo.png"
+            alt="ARCHARIOS Logo"
+            class="h-8 w-8 rounded-full scale-175 object-cover"
+          />
         </div>
-
-        <h1 class="text-lg md:text-xl font-bold">
-          ARCH<span class="text-red-500 animate-pulse">ARIOS</span>
-        </h1>
+        <h1 class="text-lg md:text-xl font-bold">ARCH<span class="text-red-500">ARIOS</span></h1>
       </a>
 
       <!-- Desktop Navigation -->
@@ -18,6 +21,7 @@
           <a
             class="text-sm lg:text-base text-gray-300 hover:text-white transition-colors"
             routerLink="/home"
+            (click)="closeMenuAndScroll()"
             >Home</a
           >
         </li>
@@ -25,6 +29,7 @@
           <a
             class="text-sm lg:text-base text-gray-300 hover:text-white transition-colors"
             routerLink="/about"
+            (click)="closeMenuAndScroll()"
             >About</a
           >
         </li>
@@ -32,6 +37,7 @@
           <a
             class="text-sm lg:text-base text-gray-300 hover:text-white transition-colors"
             routerLink="/projects"
+            (click)="closeMenuAndScroll()"
             >Projects</a
           >
         </li>
@@ -39,6 +45,7 @@
           <a
             class="text-sm lg:text-base text-gray-300 hover:text-white transition-colors"
             routerLink="/resume"
+            (click)="closeMenuAndScroll()"
             >Resume</a
           >
         </li>
@@ -46,6 +53,7 @@
           <a
             class="text-sm lg:text-base text-gray-300 hover:text-white transition-colors"
             routerLink="/contact"
+            (click)="closeMenuAndScroll()"
             >Contact</a
           >
         </li>
@@ -53,7 +61,8 @@
 
       <!-- Resume Button (Desktop) -->
       <a
-        href="/resume"
+        routerLink="/resume"
+        (click)="closeMenuAndScroll()"
         class="hidden md:block bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 lg:px-6 rounded-full text-sm lg:text-base transition-all duration-300 shadow-lg shadow-red-600/25"
       >
         RESUME
@@ -90,6 +99,7 @@
               <a
                 class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
                 routerLink="/home"
+                (click)="closeMenuAndScroll()"
                 >Home</a
               >
             </li>
@@ -97,6 +107,7 @@
               <a
                 class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
                 routerLink="/about"
+                (click)="closeMenuAndScroll()"
                 >About</a
               >
             </li>
@@ -104,6 +115,7 @@
               <a
                 class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
                 routerLink="/projects"
+                (click)="closeMenuAndScroll()"
                 >Projects</a
               >
             </li>
@@ -111,6 +123,7 @@
               <a
                 class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
                 routerLink="/resume"
+                (click)="closeMenuAndScroll()"
                 >Resume</a
               >
             </li>
@@ -118,12 +131,14 @@
               <a
                 class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
                 routerLink="/contact"
+                (click)="closeMenuAndScroll()"
                 >Contact</a
               >
             </li>
             <li class="pt-2">
               <a
-                href="/resume"
+                routerLink="/resume"
+                (click)="closeMenuAndScroll()"
                 class="block w-full text-center bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-full transition-colors"
                 >RESUME</a
               >

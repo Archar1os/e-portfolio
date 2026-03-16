@@ -11,4 +11,17 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 })
 
 export class Header {
+  closeMenuAndScroll(): void {
+    // Scroll to top
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+    
+    // Uncheck mobile menu checkbox
+    const menuToggle = document.getElementById('menu-toggle') as HTMLInputElement;
+    if (menuToggle) {
+      menuToggle.checked = false;
+    }
+  }
 }
